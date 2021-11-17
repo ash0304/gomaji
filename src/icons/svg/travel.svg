@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+  <g id="index_travel_icon" transform="translate(0.5 0.5)">
+    <circle id="Oval" cx="27.5" cy="27.5" r="27.5" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
+    <g id="travel_icon" transform="translate(13 14)">
+      <rect id="Rectangle" width="4.909" height="21.273" transform="translate(0 4.909)" fill="#fff"/>
+      <rect id="Rectangle_Copy" data-name="Rectangle Copy" width="16.364" height="21.273" transform="translate(6.545 4.909)" fill="#fff"/>
+      <rect id="Rectangle_Copy_2" data-name="Rectangle Copy 2" width="4.909" height="21.273" transform="translate(24.545 4.909)" fill="#fff"/>
+      <g id="Group_7" data-name="Group 7" transform="translate(8.182)">
+        <rect id="Rectangle_2" data-name="Rectangle 2" width="13.091" height="1.636" rx="0.818" fill="#fff"/>
+        <path id="Rectangle_2_Copy" data-name="Rectangle 2 Copy" d="M0,0H4.091l.818,1.636H0Z" transform="translate(0 4.909) rotate(-90)" fill="#fff"/>
+        <path id="Rectangle_2_Copy_2" data-name="Rectangle 2 Copy 2" d="M0,0H6.545L5.727,1.636H0Z" transform="translate(11.455 6.545) rotate(-90)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

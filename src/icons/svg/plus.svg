@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11.43" height="11.43" viewBox="0 0 11.43 11.43">
+  <g id="btn_Plus" transform="translate(0.5 0.5)">
+    <path id="减去_2" data-name="减去 2" d="M5.215,10.43A5.215,5.215,0,1,1,10.43,5.216,5.221,5.221,0,0,1,5.215,10.43ZM2.49,4.907a.309.309,0,0,0,0,.617H4.906V7.94a.309.309,0,0,0,.617,0V5.524H7.939a.309.309,0,1,0,0-.617H5.523V2.491a.309.309,0,0,0-.617,0V4.907Z" fill="#afafaf" stroke="rgba(0,0,0,0)" stroke-miterlimit="10" stroke-width="1"/>
+  </g>
+</svg>

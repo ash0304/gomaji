@@ -1,0 +1,27 @@
+<template>
+  <span class="prev d-md-block">&lt;</span>
+</template>
+<script>
+export default {
+  name: "Prev",
+};
+</script>
+<style lang="scss" scoped>
+.prev {
+  display: none;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  font-size: 1.8rem;
+  position: absolute;
+  color: #666;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -45px;
+  border-radius: 50%;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+  cursor: pointer;
+}
+</style>
