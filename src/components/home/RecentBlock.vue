@@ -1,8 +1,11 @@
 <template>
-  <v-container class="py-8">
+  <v-container class="px-0 py-0 py-md-8">
     <v-row>
-      <v-col cols="12">
-        <h2>最近瀏覽</h2>
+      <v-col cols="12" class="pr-0 pr-lg-3">
+        <div class="d-flex justify-space-between align-end pr-3">
+          <h3>最近瀏覽</h3>
+          <h4 class="grey--text">查看更多</h4>
+        </div>
         <carousel
           id="recent__carousel"
           :margin="5"
@@ -99,7 +102,7 @@ export default {
     return {
       rating: 4,
       responsiveObj: {
-        0: { items: 1, dots: true },
+        0: { items: 1, dots: false, stagePadding: 20 },
         600: { items: 2, dots: false },
         960: { items: 2, dots: false },
         1264: { items: 3, dots: false },
@@ -334,6 +337,15 @@ export default {
           }
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #recent__carousel {
+    position: relative;
+    ::v-deep .owl-stage {
+      right: 10px;
     }
   }
 }

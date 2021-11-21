@@ -1,8 +1,8 @@
 <template>
-  <v-container class="py-8">
+  <v-container class="px-0 py-2 py-md-8">
     <v-row>
-      <v-col cols="12">
-        <h2>探索熱門城市</h2>
+      <v-col cols="12" class="pr-0 pr-lg-3">
+        <h3>探索熱門城市</h3>
         <div class="hotcity__container">
           <!-- Normal set  show view lower than md(960px) -->
           <div
@@ -10,7 +10,7 @@
             :key="index"
             :class="{ active: activeItem === index }"
             :style="styleObj(item)"
-            class="hotcity__item d-md-block"
+            class="hotcity__item d-lg-block"
             @mouseenter="activeItem = index"
           >
             <div class="hotcity__overlap">
@@ -18,14 +18,13 @@
               <div class="hotcity__tags">
                 <div class="hotcity__tag">交通 & 旅遊必備</div>
                 <div class="hotcity__tag">熱門票券</div>
-                <div class="hotcity__more">更多在地體驗</div>
               </div>
             </div>
           </div>
           <!-- Carousel component show view lower than md(960px) -->
           <carousel
             id="hotcity__carousel"
-            class="d-md-none"
+            class="d-lg-none"
             :margin="10"
             :nav="false"
             :responsive="responsiveObj"
@@ -38,11 +37,6 @@
             >
               <div class="hotcity__carousel__overlap">
                 <h4 class="hotcity__carousel__location">{{ item.location }}</h4>
-                <div class="hotcity__carousel__tags">
-                  <div class="hotcity__carousel__tag">交通 & 旅遊必備</div>
-                  <div class="hotcity__carousel__tag">熱門票券</div>
-                  <div class="hotcity__carousel__more">更多在地體驗</div>
-                </div>
               </div>
             </div>
           </carousel>
@@ -61,9 +55,9 @@ export default {
     return {
       activeItem: 0,
       responsiveObj: {
-        0: { items: 1, dots: true },
-        600: { items: 2, dots: false },
-        960: { items: 2, dots: false },
+        0: { items: 2, dots: false, stagePadding: 20 },
+        600: { items: 3, dots: false },
+        960: { items: 5, dots: false },
       },
       hotcityList: [
         {
@@ -113,10 +107,10 @@ export default {
   #hotcity__carousel {
     display: block;
     width: 100%;
-    height: 270px;
+    height: 218px;
     .hotcity__carousel__item {
       width: 100%;
-      height: 270px;
+      height: 218px;
       border-radius: 6px;
       .hotcity__carousel__overlap {
         position: absolute;
@@ -136,7 +130,6 @@ export default {
           position: relative;
           color: white;
           font-size: 1.4rem;
-          bottom: -45px;
           transition: 0.2s bottom ease-in-out;
         }
         .hotcity__carousel__tags {
@@ -147,52 +140,6 @@ export default {
           bottom: -45px;
           transition: 0.2s bottom ease-in-out;
           display: flex;
-          .hotcity__carousel__tag {
-            font-size: 0.8rem;
-            border: 1px solid white;
-            border-radius: 100px;
-            padding: 2px 12px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            text-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-            margin: 5px 2px;
-            font-weight: 400;
-            background: transparent;
-          }
-          .hotcity__carousel__more {
-            font-size: 0.8rem;
-            border: 1px solid white;
-            border-radius: 100px;
-            padding: 2px 12px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            text-shadow: 0 5px 10px rgba(0, 0, 0, 5%);
-            margin: 5px 2px;
-            background: hsla(0, 0%, 100%, 0.2);
-          }
-        }
-      }
-      &:hover {
-        cursor: pointer;
-        opacity: 0.8;
-        .hotcity__carousel__overlap {
-          .hotcity__carousel__location {
-            bottom: 0px;
-          }
-          .hotcity__carousel__tags {
-            bottom: 0px;
-          }
-        }
-      }
-      &.active {
-        width: 33.3%;
-        .hotcity__carousel__overlap {
-          .hotcity__carousel__location {
-            bottom: 0px;
-          }
-          .hotcity__carousel__tags {
-            bottom: 0px;
-          }
         }
       }
     }
@@ -249,17 +196,6 @@ export default {
           font-weight: 400;
           background: transparent;
         }
-        .hotcity__more {
-          font-size: 0.8rem;
-          border: 1px solid white;
-          border-radius: 100px;
-          padding: 2px 12px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          text-shadow: 0 5px 10px rgba(0, 0, 0, 5%);
-          margin: 5px 2px;
-          background: hsla(0, 0%, 100%, 0.2);
-        }
       }
     }
     &:hover {
@@ -282,6 +218,16 @@ export default {
         .hotcity__tags {
           bottom: 0px;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hotcity__container {
+    #hotcity__carousel {
+      ::v-deep .owl-stage {
+        right: 20px;
       }
     }
   }

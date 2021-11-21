@@ -1,9 +1,9 @@
 <template>
-  <v-container class="py-8">
+  <v-container class="px-0 py-0 py-md-8">
     <v-row>
       <v-col cols="12">
-        <h2>廣告排位2</h2>
-        <div class="slipt__container">
+        <h3>廣告排位2</h3>
+        <div class="split__container">
           <!-- Normal set  show view lower than md(960px) -->
           <div class="split__normal d-md-flex">
             <div class="split__left"></div>
@@ -44,7 +44,7 @@ export default {
       // owl carousel control setting
       responsiveObj: {
         0: { items: 1 },
-        600: { items: 1 },
+        600: { items: 2 },
         960: { items: 3 },
         1264: { items: 6 },
         1904: { items: 6 },
@@ -69,8 +69,8 @@ export default {
   methods: {
     styleObj(item) {
       return {
-        background: `url(${item.url})`,
-        "background-size": "cover",
+        background: `url(${item.url}) no-repeat`,
+        "background-size": "contain",
         "background-position": "50%",
       };
     },
@@ -78,18 +78,18 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.slipt__container {
+.split__container {
   display: flex;
   padding: 14px 5px;
   /* carousel */
   #split__promote {
     display: block;
     width: 100%;
-    height: 270px;
+    height: 158px;
     .split__carousel__item {
       overflow: hidden;
       width: 100%;
-      height: 270px;
+      height: 158px;
       border-radius: 6px;
     }
   }
@@ -97,15 +97,14 @@ export default {
   .split__normal {
     display: none;
     width: 100%;
-    height: 270px;
+    height: 365px;
   }
 
-  justify-content: space-between;
   .split__left {
     width: 60%;
     padding: 5px;
-    background: url("../../assets/home/split01.png");
-    background-size: cover;
+    background: url("../../assets/home/split01.png") no-repeat;
+    background-size: 100% 100%;
     background-position: center center;
   }
   .split__right {
@@ -113,20 +112,39 @@ export default {
     width: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 
     .split__top {
-      height: 45%;
-      background: url("../../assets/home/split02.png");
-      background-size: cover;
+      height: 50%;
+      background: url("../../assets/home/split02.png") no-repeat;
+      background-size: 100% 100%;
       background-position: center center;
     }
     .split__bottom {
-      height: 45%;
-      background: url("../../assets/home/split03.png");
-      background-size: cover;
+      height: 50%;
+      background: url("../../assets/home/split03.png") no-repeat;
+      background-size: 100% 100%;
       background-position: center center;
     }
   }
 }
+
+@media screen and (max-width: 1264px) {
+  .split__container {
+    .split__normal {
+      height: 266px;
+    }
+  }
+}
+
+/* @media screen and (max-width: 600px) {
+  .split__container {
+    #split__promote {
+      height: 158px;
+      .split__carousel__item {
+        height: 158px;
+      }
+    }
+  }
+} */
 </style>

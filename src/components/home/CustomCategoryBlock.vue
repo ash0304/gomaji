@@ -1,8 +1,11 @@
 <template>
-  <v-container class="py-8">
+  <v-container class="px-0 py-0 py-md-8">
     <v-row>
-      <v-col cols="12">
-        <h2>客製化分類商品推薦</h2>
+      <v-col cols="12" class="pr-0 pr-lg-3">
+        <div class="d-flex justify-space-between align-end pr-3">
+          <h3>客製化分類商品推薦</h3>
+          <h4 class="grey--text">查看更多</h4>
+        </div>
         <carousel
           id="custom__carousel"
           :margin="5"
@@ -116,7 +119,7 @@ export default {
   data() {
     return {
       responsiveObj: {
-        0: { items: 1, dots: true },
+        0: { items: 1, dots: false, stagePadding: 20 },
         600: { items: 2, dots: false },
         960: { items: 3, dots: false },
         1264: { items: 4, dots: false },
@@ -452,6 +455,15 @@ export default {
           }
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #custom__carousel {
+    position: relative;
+    ::v-deep .owl-stage {
+      right: 20px;
     }
   }
 }

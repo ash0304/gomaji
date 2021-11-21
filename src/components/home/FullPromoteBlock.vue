@@ -1,5 +1,5 @@
 <template>
-  <v-row>
+  <v-row class="d-none d-md-block">
     <v-col cols="12" class="full__banner pa-0"></v-col>
   </v-row>
 </template>

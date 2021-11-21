@@ -1,5 +1,5 @@
 <template>
-  <span class="prev d-md-block">&lt;</span>
+  <span class="prev d-md-block"></span>
 </template>
 <script>
 export default {
@@ -9,19 +9,15 @@ export default {
 <style lang="scss" scoped>
 .prev {
   display: none;
-  width: 45px;
-  height: 45px;
-  line-height: 45px;
-  font-size: 1.8rem;
+  width: 63px;
+  height: 63px;
   position: absolute;
-  color: #666;
-  text-align: center;
   top: 50%;
   transform: translateY(-50%);
   left: -45px;
-  border-radius: 50%;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
   z-index: 5;
+  background: url("../../../assets/home/prev.png") no-repeat;
+  background-size: cover;
   cursor: pointer;
 }
 </style>

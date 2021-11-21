@@ -1,15 +1,17 @@
 <template>
   <v-container fluid>
-    <!-- Collaborate -->
-    <CollaborateBlock />
     <!-- DropdownBlock -->
     <DropdownBlock />
+    <!-- FullBanner -->
+    <FullBanner />
     <!-- Search Block -->
     <SearchBlock />
-    <!-- CategorySearch Block -->
-    <CategorySearch />
     <!-- Promote Block -->
     <PromoteBlock />
+    <!-- CategorySearch Block -->
+    <CategorySearch />
+    <!-- CategoryBall Block -->
+    <CategoryBall />
     <!-- HotCity Block -->
     <HotCityBlock />
     <!-- Recent Browse Block -->
@@ -26,10 +28,11 @@
 </template>
 
 <script>
-import CollaborateBlock from "@/components/home/CollaborateBlock";
 import DropdownBlock from "@/components/home/DropdownBlock";
+import FullBanner from "@/components/home/FullBanner";
 import SearchBlock from "@/components/home/SearchBlock";
 import CategorySearch from "@/components/home/CategorySearch";
+import CategoryBall from "@/components/home/CategoryBall";
 import PromoteBlock from "@/components/home/PromoteBlock";
 import HotCityBlock from "@/components/home/HotCityBlock";
 import RecentBlock from "@/components/home/RecentBlock";
@@ -40,10 +43,11 @@ import FullPromoteBlock from "@/components/home/FullPromoteBlock.vue";
 export default {
   name: "Home",
   components: {
-    CollaborateBlock,
     DropdownBlock,
+    FullBanner,
     SearchBlock,
     CategorySearch,
+    CategoryBall,
     PromoteBlock,
     HotCityBlock,
     RecentBlock,

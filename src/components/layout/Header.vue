@@ -1,8 +1,14 @@
 <template>
   <nav>
-    <v-app-bar app fixed :height="height" style="z-index: 100">
+    <v-app-bar
+      app
+      fixed
+      :height="height"
+      style="z-index: 100"
+      :extension-height="extensionHeight"
+    >
       <div class="header">
-        <div class="header__channel__bar d-sm-none">
+        <div class="header__channel__bar d-lg-none">
           <v-container>
             <v-row>
               <v-col cols="12">
@@ -30,7 +36,7 @@
             </v-row>
           </v-container>
         </div>
-        <div class="header__info__bar d-sm-block">
+        <div class="header__info__bar d-lg-block">
           <v-container>
             <v-row>
               <v-col cols="12">
@@ -78,27 +84,43 @@
           </v-container>
         </div>
         <div class="header__bar">
-          <v-container>
+          <v-container class="py-2 py-md-3">
             <v-row>
               <v-col cols="12">
                 <div class="header__box">
                   <div class="header__left">
-                    <div class="logo__box d-md-block">
+                    <div class="logo__box d-lg-block">
                       <svg-icon iconClass="Logo" className="Logo" />
                     </div>
-                    <div class="logo__box__notext d-md-none">
-                      <svg-icon iconClass="LogoNoText" className="Logo" />
+                    <div class="logo__box__notext d-lg-none">
+                      <svg-icon iconClass="LogoNoText" className="LogoNoText" />
                     </div>
                   </div>
+                  <!-- Search Icon -->
                   <div
-                    class="header__burger d-lg-none"
-                    @click.stop="drawer = !drawer"
+                    class="
+                      header__search
+                      d-flex d-lg-none
+                      align-center
+                      justify-center
+                    "
+                    @click="searchHandler"
                   >
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <svg-icon iconClass="search" className="search" />
                   </div>
                   <div class="header__right d-lg-flex">
+                    <div class="header__navItem">
+                      <div class="header__navicon">
+                        <svg-icon iconClass="rs" className="navicon" />
+                      </div>
+                      <div class="header__navName">美食餐廳</div>
+                    </div>
+                    <div class="header__navItem">
+                      <div class="header__navicon">
+                        <svg-icon iconClass="rs" className="navicon" />
+                      </div>
+                      <div class="header__navName">美食餐廳</div>
+                    </div>
                     <div class="header__navItem">
                       <div class="header__navicon">
                         <svg-icon iconClass="rs" className="navicon" />
@@ -159,29 +181,21 @@
           </v-container>
         </div>
       </div>
+      <template v-slot:extension>
+        <div
+          class="collaborate__bar"
+          :class="{ 'd-none': extensionHeight !== 30 }"
+        >
+          <v-container>
+            <v-row>
+              <v-col cols="12" class="py-0 px-0 px-md-3">
+                <div>與一起旅行社共同營運。</div>
+              </v-col>
+            </v-row>
+          </v-container>
+        </div>
+      </template>
     </v-app-bar>
-    <!-- Drawer -->
-    <v-navigation-drawer
-      v-model="drawer"
-      temporary
-      fixed
-      app
-      class="drawer"
-      color="#ff8800"
-      style="z-index: 101"
-    >
-      <v-list dense nav>
-        <v-list-item v-for="item in items" :key="item.title" link>
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
   </nav>
 </template>
 <script>
@@ -195,17 +209,18 @@ export default {
         { title: "Photos", icon: "mdi-image" },
         { title: "About", icon: "mdi-help-box" },
       ],
+      scrollY: 0,
     };
   },
   computed: {
     height() {
       switch (this.$vuetify.breakpoint.name) {
         case "xs":
-          return 110;
+          return 95;
         case "sm":
-          return 110;
+          return 95;
         case "md":
-          return 150;
+          return 100;
         case "lg":
           return 150;
         case "xl":
@@ -214,6 +229,31 @@ export default {
           return null;
       }
     },
+    extensionHeight() {
+      if (
+        this.scrollY !== 0 &&
+        this.$vuetify.breakpoint.name !== "lg" &&
+        this.$vuetify.breakpoint.name !== "xl"
+      ) {
+        return 0;
+      } else {
+        return 30;
+      }
+    },
+  },
+  mounted() {
+    document.addEventListener("scroll", this.scrollHandler);
+  },
+  methods: {
+    scrollHandler() {
+      this.scrollY = window.scrollY;
+    },
+    searchHandler() {
+      this.$emit("showModal", true);
+    },
+  },
+  beforeDestroy() {
+    document.removeEventListener("scroll", this.scrollHandler);
   },
 };
 </script>
@@ -295,6 +335,7 @@ export default {
       justify-content: space-between;
       align-items: center;
       .header__left {
+        width: 15%;
         .logo__box {
           display: none;
           .Logo {
@@ -305,32 +346,23 @@ export default {
         }
         .logo__box__notext {
           display: block;
-          .Logo {
+          .LogoNoText {
             cursor: pointer;
-            width: 150px;
-            height: 40px;
+            width: 105px;
+            height: 28px;
           }
         }
       }
-      .header__burger {
-        width: 40px;
-        height: 40px;
-        padding: 4px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+      .header__search {
+        width: 30px;
+        height: 30px;
         cursor: pointer;
-        div {
-          width: 100%;
-          height: 4px;
-          background: white;
-        }
       }
       .header__right {
         position: relative;
         display: none;
         .header__navItem {
-          width: 88px;
+          width: 80px;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -338,8 +370,8 @@ export default {
           cursor: pointer;
           .header__navicon {
             .navicon {
-              width: 55px;
-              height: 55px;
+              width: 45px;
+              height: 45px;
             }
           }
           .header__navName {
@@ -349,7 +381,7 @@ export default {
         .header__divline {
           position: relative;
           width: 1px;
-          height: 44px;
+          height: 36px;
           background: white;
           transform: translateY(50%);
           margin: 0 10px;
@@ -365,10 +397,25 @@ export default {
     }
   }
 }
-.drawer {
+
+::v-deep .v-toolbar__extension {
   background: #ff8800;
-  .test {
-    color: white;
+  color: white;
+  padding: 0 16px;
+}
+
+.collaborate__bar {
+  width: 100%;
+  height: auto;
+  background: #ff8800;
+  color: white;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+@media screen and (max-width: 1264px) {
+  .collaborate__bar {
+    font-size: 0.8rem;
   }
 }
 </style>

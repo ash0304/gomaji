@@ -1,7 +1,7 @@
 <template>
-  <v-container class="py-8">
+  <v-container class="px-0 pt-4 pt-md-8 promoteblock d-lg-block">
     <v-row>
-      <v-col cols="12">
+      <v-col cols="12" class="pr-0 pr-lg-3">
         <h2>最新旅遊優惠</h2>
         <carousel
           id="promote__carousel"
@@ -10,6 +10,7 @@
           :dots="false"
           :nav="false"
           :slideBy="'page'"
+          :autoplay="true"
         >
           <!-- prev -->
           <Prev slot="prev" />
@@ -87,6 +88,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.promoteblock {
+  display: none;
+}
 #promote__carousel {
   position: relative;
 }

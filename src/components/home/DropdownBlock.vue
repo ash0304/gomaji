@@ -3,7 +3,8 @@
     <v-col class="dropdown__block">
       <v-container class="pa-0">
         <v-row>
-          <v-col cols="12" class="pa-0">
+          <v-col cols="12" class="pa-0 d-lg-block dropdown__slide">
+            <!-- slide for view greater than lg -->
             <v-slide-group show-arrows center-active>
               <v-slide-item v-for="n in 12" :key="n">
                 <v-menu
@@ -27,6 +28,27 @@
               </v-slide-item>
             </v-slide-group>
           </v-col>
+          <v-col cols="12 pb-2 pt-3 dropdown__hamburger__container d-lg-none">
+            <!-- dropdown for view lesser than lg -->
+            <div class="dropdown__hamburger__box">
+              <v-menu offset-y :nudge-width="100">
+                <template v-slot:activator="{ on, attrs }">
+                  <div class="dropdown__hamburger" v-bind="attrs" v-on="on">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </template>
+                <v-list>
+                  <v-list-item v-for="n in 9" :key="n">
+                    <v-list-item-title>更多選項</v-list-item-title>
+                  </v-list-item>
+                </v-list>
+              </v-menu>
+              <div class="dropdown__blank">&nbsp;</div>
+              <div class="dropdown__blank">&nbsp;</div>
+            </div>
+          </v-col>
         </v-row>
       </v-container>
     </v-col>
@@ -40,35 +62,61 @@ export default {
 <style lang="scss" scoped>
 .dropdown__block {
   background: #f5f5f5;
-  .dropdown__item {
-    position: relative;
-    margin: 0 10px;
-    padding: 12px 17px 12px 15px;
-    &::after {
-      position: absolute;
-      right: -10px;
-      top: 50%;
-      transform: translateY(-50%);
-      content: "";
-      width: 1px;
-      height: 50%;
-      background: #707070;
-    }
-    &::before {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      content: "";
-      width: 100%;
-      height: 2px;
-      background: #ff8800;
-      display: none;
-    }
-    &:hover {
-      cursor: pointer;
-      color: #ff8800;
+  .dropdown__slide {
+    display: none;
+    .dropdown__item {
+      position: relative;
+      margin: 0 10px;
+      padding: 12px 17px 12px 15px;
+      &::after {
+        position: absolute;
+        right: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        content: "";
+        width: 1px;
+        height: 50%;
+        background: #707070;
+      }
       &::before {
-        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: #ff8800;
+        display: none;
+      }
+      &:hover {
+        cursor: pointer;
+        color: #ff8800;
+        &::before {
+          display: block;
+        }
+      }
+    }
+  }
+  .dropdown__hamburger__container {
+    display: block;
+    .dropdown__hamburger__box {
+      display: flex;
+      justify-content: space-between;
+      .dropdown__hamburger {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 20px;
+        height: 20px;
+        div {
+          width: 20px;
+          height: 3px;
+          background: #333;
+        }
+      }
+      .dropdown__blank {
+        width: 54px;
       }
     }
   }

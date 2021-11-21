@@ -26,7 +26,7 @@
       <div class="footer__gray__bar">
         <v-container>
           <v-row>
-            <v-col cols="12">
+            <v-col cols="12" class="py-0 pt-sm-3">
               <div class="footer__navbox">
                 <div class="footer__nvabox__item">服務條款</div>
                 <div class="footer__nvabox__item">隱私權政策</div>
@@ -130,6 +130,7 @@ export default {
     font-size: 0.9rem;
     .footer__navbox {
       display: flex;
+      align-items: center;
       height: 40px;
       .footer__nvabox__item {
         margin-right: 12px;

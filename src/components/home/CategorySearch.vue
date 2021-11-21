@@ -1,8 +1,8 @@
 <template>
-  <v-container class="py-8">
+  <v-container class="px-0 py-0 py-md-8 d-none d-lg-block">
     <v-row>
-      <v-col cols="12">
-        <h2>熱門活動分類</h2>
+      <v-col cols="12" class="pr-0 pr-lg-3">
+        <h3>熱門活動分類</h3>
         <carousel
           id="cate__carousel"
           :margin="5"
@@ -41,7 +41,7 @@ export default {
     return {
       // owl carousel control setting
       responsiveObj: {
-        0: { items: 2 },
+        0: { items: 2, stagePadding: 20 },
         600: { items: 3 },
         960: { items: 3 },
         1264: { items: 6 },
@@ -51,43 +51,43 @@ export default {
       categoryList: [
         {
           id: 0,
-          title: "防疫旅館",
-          url: "https://image.kkday.com/v2/image/get/w_177.5%2Ch_133.125%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1623/20210413042903_BsLWK/jpg",
+          title: "活動搜尋",
+          url: require("@/assets/home/recent07.png"),
         },
         {
           id: 1,
-          title: "防疫旅館",
-          url: "https://image.kkday.com/v2/image/get/w_177.5%2Ch_133.125%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1623/20210413042903_BsLWK/jpg",
+          title: "活動搜尋",
+          url: require("@/assets/home/recent08.png"),
         },
         {
           id: 2,
-          title: "防疫旅館",
-          url: "https://image.kkday.com/v2/image/get/w_177.5%2Ch_133.125%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1623/20210413042903_BsLWK/jpg",
+          title: "活動搜尋",
+          url: require("@/assets/home/recent09.png"),
         },
         {
           id: 3,
-          title: "防疫旅館",
-          url: "https://image.kkday.com/v2/image/get/w_177.5%2Ch_133.125%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1623/20210413042903_BsLWK/jpg",
+          title: "活動搜尋",
+          url: require("@/assets/home/recent10.png"),
         },
         {
           id: 4,
-          title: "防疫旅館",
-          url: "https://image.kkday.com/v2/image/get/w_177.5%2Ch_133.125%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1623/20210413042903_BsLWK/jpg",
+          title: "活動搜尋",
+          url: require("@/assets/home/recent11.png"),
         },
         {
           id: 5,
-          title: "防疫旅館",
-          url: "https://image.kkday.com/v2/image/get/w_177.5%2Ch_133.125%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1623/20210413042903_BsLWK/jpg",
+          title: "活動搜尋",
+          url: require("@/assets/home/recent12.png"),
         },
         {
           id: 6,
-          title: "防疫旅館",
-          url: "https://image.kkday.com/v2/image/get/w_177.5%2Ch_133.125%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1623/20210413042903_BsLWK/jpg",
+          title: "活動搜尋",
+          url: require("@/assets/home/recent07.png"),
         },
         {
           id: 7,
-          title: "防疫旅館",
-          url: "https://image.kkday.com/v2/image/get/w_177.5%2Ch_133.125%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1623/20210413042903_BsLWK/jpg",
+          title: "活動搜尋",
+          url: require("@/assets/home/recent08.png"),
         },
       ],
     };
@@ -115,6 +115,14 @@ export default {
     &:hover {
       opacity: 0.8;
       cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #cate__carousel {
+    ::v-deep .owl-stage {
+      right: 20px;
     }
   }
 }
