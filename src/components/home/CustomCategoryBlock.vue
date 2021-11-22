@@ -76,7 +76,9 @@
                   </div>
                 </div>
                 <!-- info -->
-                <div class="custom__info d-flex justify-start align-center">
+                <div
+                  class="custom__info d-flex justify-space-between align-center"
+                >
                   <div class="custom__location">
                     <svg-icon iconClass="location" className="location" />
                     <span>台灣 苗栗</span>

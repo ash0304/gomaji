@@ -128,7 +128,7 @@ export default {
   name: "CookieCheck",
   data() {
     return {
-      showModel: true,
+      showModel: false,
       showDetail: false,
       items: ["Appetizers", "Entrees", "Deserts", "Cocktails"],
       tab: null,
