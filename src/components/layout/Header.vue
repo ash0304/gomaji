@@ -8,11 +8,11 @@
       :extension-height="extensionHeight"
     >
       <div class="header">
-        <div class="header__channel__bar d-lg-none">
+        <div class="header__channel__bar d-flex d-lg-none">
           <v-container>
             <v-row>
               <v-col cols="12">
-                <div class="header__channel__box">
+                <div class="header__channel__box d-flex justify-space-between">
                   <v-menu offset-y :nudge-width="100">
                     <template v-slot:activator="{ on, attrs }">
                       <div
@@ -40,40 +40,113 @@
           <v-container>
             <v-row>
               <v-col cols="12">
-                <div class="d-flex header__info__box">
-                  <div class="header__info__left">
-                    <div class="header__info__item">
+                <div
+                  class="
+                    d-flex
+                    header__info__box
+                    d-flex
+                    justify-space-between
+                    align-center
+                  "
+                >
+                  <div
+                    class="header__info__left d-flex justify-start align-center"
+                  >
+                    <div
+                      class="
+                        header__info__item
+                        d-flex
+                        justify-center
+                        align-center
+                      "
+                    >
                       <svg-icon iconClass="phone" className="icon" />
                       <div>APP下載</div>
                     </div>
-                    <div class="header__info__item">
+                    <div
+                      class="
+                        header__info__item
+                        d-flex
+                        justify-center
+                        align-center
+                      "
+                    >
                       <svg-icon iconClass="mail" className="icon" />
                       <div>電子報</div>
                     </div>
-                    <div class="header__info__item">
+                    <div
+                      class="
+                        header__info__item
+                        d-flex
+                        justify-center
+                        align-center
+                      "
+                    >
                       <svg-icon iconClass="fb" className="icon" />
                       <div>粉絲團</div>
                     </div>
                   </div>
 
-                  <div class="header__info__right">
-                    <div class="header__info__item">
+                  <div
+                    class="
+                      header__info__right
+                      d-flex
+                      justify-start
+                      align-center
+                    "
+                  >
+                    <div
+                      class="
+                        header__info__item
+                        d-flex
+                        justify-center
+                        align-center
+                      "
+                    >
                       <svg-icon iconClass="info" className="icon" />
                       <div>關於</div>
                     </div>
-                    <div class="header__info__item">
+                    <div
+                      class="
+                        header__info__item
+                        d-flex
+                        justify-center
+                        align-center
+                      "
+                    >
                       <svg-icon iconClass="hire" className="icon" />
                       <div>徵才</div>
                     </div>
-                    <div class="header__info__item">
+                    <div
+                      class="
+                        header__info__item
+                        d-flex
+                        justify-center
+                        align-center
+                      "
+                    >
                       <svg-icon iconClass="heart" className="icon" />
                       <div>公益</div>
                     </div>
-                    <div class="header__info__item">
+                    <div
+                      class="
+                        header__info__item
+                        d-flex
+                        justify-center
+                        align-center
+                      "
+                    >
                       <svg-icon iconClass="custom" className="icon" />
                       <div>客服</div>
                     </div>
-                    <div class="header__info__item">
+                    <div
+                      class="
+                        header__info__item
+                        d-flex
+                        justify-center
+                        align-center
+                      "
+                    >
                       <svg-icon iconClass="cart" className="icon" />
                       <div>購物車</div>
                     </div>
@@ -83,11 +156,13 @@
             </v-row>
           </v-container>
         </div>
-        <div class="header__bar">
+        <div class="header__bar d-flex align-center">
           <v-container class="py-2 py-md-3">
             <v-row>
               <v-col cols="12">
-                <div class="header__box">
+                <div
+                  class="header__box d-flex justify-space-between align-center"
+                >
                   <div class="header__left">
                     <div class="logo__box d-lg-block">
                       <svg-icon iconClass="Logo" className="Logo" />
@@ -109,68 +184,35 @@
                     <svg-icon iconClass="search" className="search" />
                   </div>
                   <div class="header__right d-lg-flex">
-                    <div class="header__navItem">
+                    <div
+                      v-for="(item, index) in navItemList"
+                      :key="index"
+                      class="
+                        header__navItem
+                        d-flex
+                        flex-column
+                        align-center
+                        justify-center
+                      "
+                    >
                       <div class="header__navicon">
-                        <svg-icon iconClass="rs" className="navicon" />
+                        <svg-icon
+                          :iconClass="item.svgClass"
+                          className="navicon"
+                        />
                       </div>
-                      <div class="header__navName">美食餐廳</div>
-                    </div>
-                    <div class="header__navItem">
-                      <div class="header__navicon">
-                        <svg-icon iconClass="rs" className="navicon" />
-                      </div>
-                      <div class="header__navName">美食餐廳</div>
-                    </div>
-                    <div class="header__navItem">
-                      <div class="header__navicon">
-                        <svg-icon iconClass="rs" className="navicon" />
-                      </div>
-                      <div class="header__navName">美食餐廳</div>
-                    </div>
-                    <div class="header__navItem">
-                      <div class="header__navicon">
-                        <svg-icon iconClass="beauty" className="navicon" />
-                      </div>
-                      <div class="header__navName">美容舒壓</div>
-                    </div>
-                    <div class="header__navItem">
-                      <div class="header__navicon">
-                        <svg-icon iconClass="travel" className="navicon" />
-                      </div>
-                      <div class="header__navName">旅遊住宿</div>
-                    </div>
-                    <div class="header__navItem">
-                      <div class="header__navicon">
-                        <svg-icon iconClass="home" className="navicon" />
-                      </div>
-                      <div class="header__navName">宅配美食</div>
-                    </div>
-                    <div class="header__navItem">
-                      <div class="header__navicon">
-                        <svg-icon iconClass="fiveTimes" className="navicon" />
-                      </div>
-                      <div class="header__navName">五倍券專區</div>
-                    </div>
-                    <div class="header__navItem">
-                      <div class="header__navicon">
-                        <svg-icon iconClass="massage" className="navicon" />
-                      </div>
-                      <div class="header__navName">按摩</div>
-                    </div>
-                    <div class="header__navItem">
-                      <div class="header__navicon">
-                        <svg-icon iconClass="hotspring" className="navicon" />
-                      </div>
-                      <div class="header__navName">泡湯休息</div>
-                    </div>
-                    <div class="header__navItem">
-                      <div class="header__navicon">
-                        <svg-icon iconClass="shipping" className="navicon" />
-                      </div>
-                      <div class="header__navName">宅配購物+</div>
+                      <div class="header__navName">{{ item.name }}</div>
                     </div>
                     <div class="header__divline"></div>
-                    <div class="header__policy">
+                    <div
+                      class="
+                        header__policy
+                        d-flex
+                        flex-column
+                        justify-center
+                        align-start
+                      "
+                    >
                       <div>服務條款</div>
                       <div>隱私權政策</div>
                     </div>
@@ -208,6 +250,48 @@ export default {
         { title: "Dashboard", icon: "mdi-view-dashboard" },
         { title: "Photos", icon: "mdi-image" },
         { title: "About", icon: "mdi-help-box" },
+      ],
+      navItemList: [
+        {
+          name: "美食餐廳",
+          svgClass: "rs",
+        },
+        {
+          name: "美食餐廳",
+          svgClass: "rs",
+        },
+        {
+          name: "美食餐廳",
+          svgClass: "rs",
+        },
+        {
+          name: "美容舒壓",
+          svgClass: "beauty",
+        },
+        {
+          name: "旅遊住宿",
+          svgClass: "travel",
+        },
+        {
+          name: "宅配美食",
+          svgClass: "home",
+        },
+        {
+          name: "五倍券專區",
+          svgClass: "fiveTimes",
+        },
+        {
+          name: "按摩",
+          svgClass: "massage",
+        },
+        {
+          name: "泡湯休息",
+          svgClass: "hotspring",
+        },
+        {
+          name: "宅配購物+",
+          svgClass: "shipping",
+        },
       ],
       scrollY: 0,
     };
@@ -264,10 +348,7 @@ export default {
 .header {
   width: 100%;
   .header__channel__bar {
-    display: flex;
     .header__channel__box {
-      display: flex;
-      justify-content: space-between;
       .header__channel__div {
         padding: 0 10px;
         border-radius: 6px;
@@ -285,17 +366,8 @@ export default {
     height: 100%;
     font-size: 0.8rem;
     .header__info__box {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       .header__info__left {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
         .header__info__item {
-          display: flex;
-          justify-content: center;
-          align-items: center;
           cursor: pointer;
           margin-right: 16px;
           .icon {
@@ -306,13 +378,7 @@ export default {
         }
       }
       .header__info__right {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
         .header__info__item {
-          display: flex;
-          justify-content: center;
-          align-items: center;
           cursor: pointer;
           margin-right: 16px;
           .icon {
@@ -328,12 +394,7 @@ export default {
     width: 100%;
     height: auto;
     background: #ff8800;
-    display: flex;
-    align-items: center;
     .header__box {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       .header__left {
         width: 15%;
         .logo__box {
@@ -363,10 +424,6 @@ export default {
         display: none;
         .header__navItem {
           width: 80px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
           cursor: pointer;
           .header__navicon {
             .navicon {
@@ -388,10 +445,6 @@ export default {
         }
         .header__policy {
           color: white;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
         }
       }
     }

@@ -3,11 +3,11 @@
     <v-row>
       <v-col cols="12">
         <h3>廣告排位2</h3>
-        <div class="split__container">
+        <div class="split__container d-flex">
           <!-- Normal set  show view lower than md(960px) -->
           <div class="split__normal d-md-flex">
             <div class="split__left"></div>
-            <div class="split__right">
+            <div class="split__right d-flex flex-column justify-center">
               <div class="split__top"></div>
               <div class="split__bottom"></div>
             </div>
@@ -79,7 +79,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .split__container {
-  display: flex;
   padding: 14px 5px;
   /* carousel */
   #split__promote {
@@ -110,10 +109,6 @@ export default {
   .split__right {
     padding: 5px;
     width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
     .split__top {
       height: 50%;
       background: url("../../assets/home/split02.png") no-repeat;

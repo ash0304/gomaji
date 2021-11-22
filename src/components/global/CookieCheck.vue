@@ -9,8 +9,8 @@
               <h4>
                 點擊「允許所有Cookies」，即表示您同意我們在您的瀏覽器儲存所有Cookies，我們將用於維護網站安全性、改善網站效能、分析使用情形，並用於廣告或行銷。若要調整或查看更多資訊，請點擊「顯示詳情」，或詳見Cookie政策說明。
               </h4>
-              <div class="choose__block">
-                <div class="choose__btnbox">
+              <div class="choose__block d-flex justify-start align-center">
+                <div class="choose__btnbox d-flex">
                   <div class="choose__btn partallow" @click="handleClose">
                     僅使用必要Cookies
                   </div>
@@ -19,9 +19,16 @@
                   </div>
                 </div>
               </div>
-              <div class="choose__detail__block">
+              <div
+                class="choose__detail__block d-flex justify-end align-center"
+              >
                 <div
-                  class="choose__detail"
+                  class="
+                    choose__detail
+                    d-flex
+                    align-center
+                    justify-space-around
+                  "
                   @click="handleDetail"
                   :class="{ show: showDetail === true }"
                 >
@@ -183,12 +190,8 @@ export default {
   background: rgba(0, 0, 0, 0.7);
   color: white;
   .choose__block {
-    display: flex;
     margin: 20px 0px;
-    justify-content: flex-start;
-    align-items: center;
     .choose__btnbox {
-      display: flex;
       font-size: 0.8rem;
       .choose__btn {
         padding: 7px 15px 5px;
@@ -205,14 +208,8 @@ export default {
     }
   }
   .choose__detail__block {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
     margin-bottom: 20px;
     .choose__detail {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
       .arrow {
         width: 20px;
         height: 20px;

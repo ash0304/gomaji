@@ -20,18 +20,18 @@
             :key="item.id"
             class="recent__item"
           >
-            <div class="recent__shadowbox">
+            <div class="recent__shadowbox d-flex justify-space-between">
               <!-- img -->
               <div class="recent__img" :style="styleObj(item)"></div>
               <!-- detail -->
               <div class="recent__detail">
                 <!-- popover -->
-                <div class="recent__popover">
+                <div class="recent__popover d-flex justify-start align-center">
                   <svg-icon iconClass="lightning" className="lightning" />
                   <div>立即確認</div>
                 </div>
                 <!-- top -->
-                <div class="recent__top">
+                <div class="recent__top d-flex justify-space-between">
                   <!-- title -->
                   <div class="recent__title">
                     <!-- lighten icon -->
@@ -57,7 +57,7 @@
                   </div>
                 </div>
                 <!-- bottom -->
-                <div class="recent__bottom">
+                <div class="recent__bottom flex-column flex-md-row">
                   <!-- v-rating -->
                   <div class="recent__rating">
                     <v-rating
@@ -172,8 +172,6 @@ export default {
     overflow: hidden;
     padding: 30px 5px;
     .recent__shadowbox {
-      display: flex;
-      justify-content: space-between;
       width: 100%;
       height: 120px;
       /* border: 1px solid pink; */
@@ -189,10 +187,7 @@ export default {
         .recent__popover {
           position: absolute;
           padding: 4px 8px;
-          display: flex;
           left: 35%;
-          justify-content: flex-start;
-          align-items: center;
           background: #26bec9;
           border-radius: 6px;
           color: white;
@@ -216,8 +211,6 @@ export default {
           }
         }
         .recent__top {
-          display: flex;
-          justify-content: space-between;
           height: 65%;
           padding-top: 5px;
           .recent__title {

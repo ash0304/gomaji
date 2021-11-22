@@ -13,9 +13,17 @@
             class="hotcity__item d-lg-block"
             @mouseenter="activeItem = index"
           >
-            <div class="hotcity__overlap">
+            <div
+              class="
+                hotcity__overlap
+                d-flex
+                flex-column
+                justify-end
+                align-start
+              "
+            >
               <h4 class="hotcity__location">{{ item.location }}</h4>
-              <div class="hotcity__tags">
+              <div class="hotcity__tags d-flex flex-nowrap">
                 <div class="hotcity__tag">交通 & 旅遊必備</div>
                 <div class="hotcity__tag">熱門票券</div>
               </div>
@@ -35,7 +43,15 @@
               class="hotcity__carousel__item"
               :style="styleObj(item)"
             >
-              <div class="hotcity__carousel__overlap">
+              <div
+                class="
+                  hotcity__carousel__overlap
+                  d-flex
+                  flex-column
+                  justify-end
+                  align-start
+                "
+              >
                 <h4 class="hotcity__carousel__location">{{ item.location }}</h4>
               </div>
             </div>
@@ -119,11 +135,6 @@ export default {
         background: linear-gradient(transparent 60%, rgba(0, 0, 0, 0.85));
         width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
-        overflow: hidden;
         padding: 10px 10px 15px 10px;
         border-radius: 0 0 4px 4px;
         .hotcity__carousel__location {
@@ -131,15 +142,6 @@ export default {
           color: white;
           font-size: 1.4rem;
           transition: 0.2s bottom ease-in-out;
-        }
-        .hotcity__carousel__tags {
-          position: relative;
-          width: 400px;
-          flex-wrap: nowrap;
-          color: white;
-          bottom: -45px;
-          transition: 0.2s bottom ease-in-out;
-          display: flex;
         }
       }
     }
@@ -162,10 +164,6 @@ export default {
       background: linear-gradient(transparent 60%, rgba(0, 0, 0, 0.85));
       width: 100%;
       height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: flex-start;
       overflow: hidden;
       padding: 10px 10px 15px 10px;
       border-radius: 0 0 4px 4px;
@@ -179,11 +177,9 @@ export default {
       .hotcity__tags {
         position: relative;
         width: 400px;
-        flex-wrap: nowrap;
         color: white;
         bottom: -45px;
         transition: 0.2s bottom ease-in-out;
-        display: flex;
         .hotcity__tag {
           font-size: 0.8rem;
           border: 1px solid white;

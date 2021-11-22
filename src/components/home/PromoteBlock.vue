@@ -21,7 +21,15 @@
           >
             <div class="carousel__shadowbox">
               <img class="carousel__item__bg" :src="item.url" />
-              <div class="carousel__item__detail">
+              <div
+                class="
+                  carousel__item__detail
+                  d-flex
+                  flex-column
+                  justify-space-around
+                  align-start
+                "
+              >
                 <div>{{ item.title }}</div>
                 <div>更多內容 >></div>
               </div>
@@ -114,10 +122,6 @@ export default {
       background: rgba(0, 0, 0, 0.6);
       color: white;
       border-radius: 6px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: flex-start;
       padding: 0 10%;
       opacity: 0;
       transition: all 0.3s ease-in;

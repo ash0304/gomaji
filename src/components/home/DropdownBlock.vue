@@ -30,10 +30,20 @@
           </v-col>
           <v-col cols="12 pb-2 pt-3 dropdown__hamburger__container d-lg-none">
             <!-- dropdown for view lesser than lg -->
-            <div class="dropdown__hamburger__box">
+            <div class="dropdown__hamburger__box d-flex justify-space-between">
               <v-menu offset-y :nudge-width="100">
                 <template v-slot:activator="{ on, attrs }">
-                  <div class="dropdown__hamburger" v-bind="attrs" v-on="on">
+                  <div
+                    class="
+                      dropdown__hamburger
+                      d-flex
+                      flex-column
+                      align-center
+                      justify-space-around
+                    "
+                    v-bind="attrs"
+                    v-on="on"
+                  >
                     <div></div>
                     <div></div>
                     <div></div>
@@ -100,13 +110,7 @@ export default {
   .dropdown__hamburger__container {
     display: block;
     .dropdown__hamburger__box {
-      display: flex;
-      justify-content: space-between;
       .dropdown__hamburger {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
         width: 20px;
         height: 20px;
         div {

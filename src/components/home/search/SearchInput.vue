@@ -87,20 +87,32 @@
         </div>
       </div>
       <!-- 搜尋時 d-none拆掉可用 -->
-      <div class="search__ing__box d-none">
-        <div v-for="n in 8" :key="n" class="search__ing__item">
+      <div class="search__ing__box d-flex flex-column d-none">
+        <div
+          v-for="n in 8"
+          :key="n"
+          class="search__ing__item d-flex align-center justify-space-between"
+        >
           <!-- left -->
-          <div class="search__ing__left">
+          <div class="search__ing__left d-flex justify-start">
             <!-- img -->
             <div class="search__ing__imgbox">
               <div class="search__ing__img"></div>
             </div>
             <!-- content -->
-            <div class="search__ing__content">
+            <div
+              class="
+                search__ing__content
+                d-flex
+                flex-column
+                align-start
+                justify-center
+              "
+            >
               <div class="search__ing__name">
                 桃園青埔｜Xpark 都會型水生公園門票
               </div>
-              <div class="search__ing__price__box">
+              <div class="search__ing__price__box d-flex align-center">
                 <div>TWD</div>
                 <div class="search__ing__price">150</div>
                 <div class="search__ing__discount">37%OFF</div>
@@ -109,9 +121,11 @@
           </div>
 
           <!-- right -->
-          <div class="search__ing__right">
+          <div class="search__ing__right d-flex">
             <!-- location -->
-            <div class="search__ing__location">
+            <div
+              class="search__ing__location d-flex align-center justify-center"
+            >
               <svg-icon iconClass="location" className="location" />
               <div>台北</div>
             </div>
@@ -244,22 +258,15 @@ export default {
     }
     /* searching block */
     .search__ing__box {
-      display: flex;
-      flex-direction: column;
       .search__ing__item {
         width: 100%;
         height: 45px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         cursor: pointer;
         border-radius: 6px;
         margin: 4px 0;
         .search__ing__left {
           width: 80%;
           height: 45px;
-          display: flex;
-          justify-content: flex-start;
           .search__ing__imgbox {
             width: auto;
             .search__ing__img {
@@ -273,10 +280,6 @@ export default {
           .search__ing__content {
             width: 80%;
             height: 45px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -285,8 +288,6 @@ export default {
             }
             .search__ing__price__box {
               font-size: 0.7rem;
-              display: flex;
-              align-items: center;
               .search__ing__price {
                 font-size: 1rem;
                 color: #26bec9;
@@ -305,11 +306,7 @@ export default {
         .search__ing__right {
           width: 20%;
           height: 45px;
-          display: flex;
           .search__ing__location {
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: #6d6c6c;
             font-size: 0.9rem;
           }

@@ -16,18 +16,20 @@
           <!-- prev -->
           <Prev slot="prev" />
           <div v-for="item in customList" :key="item.id" class="custom__item">
-            <div class="custom__shadowbox">
+            <div class="custom__shadowbox d-flex flex-column">
               <!-- img -->
               <div class="custom__img" :style="styleObj(item)">
                 <!-- tagarea -->
-                <div class="custom__tagarea">
+                <div class="custom__tagarea d-flex justify-space-between">
                   <!-- tags -->
-                  <div class="custom__tags">
+                  <div class="custom__tags d-flex">
                     <div class="custom__tag traval">國旅券適用</div>
                     <div class="custom__tag art">藝fun券適用</div>
                   </div>
                   <!-- heart -->
-                  <div class="custom__heartarea">
+                  <div
+                    class="custom__heartarea d-flex justify-center align-center"
+                  >
                     <svg-icon
                       :iconClass="item.heartStatus"
                       :className="item.heartStatus"
@@ -36,7 +38,7 @@
                 </div>
               </div>
               <!-- popover -->
-              <div class="custom__popover">
+              <div class="custom__popover d-flex justify-start align-center">
                 <svg-icon iconClass="lightning" className="lightning" />
                 <div>立即確認</div>
               </div>
@@ -58,16 +60,23 @@
                   {{ item.title }}
                 </div>
                 <!-- status -->
-                <div class="custom__status">
+                <div class="custom__status d-flex justify-start align-center">
                   <div class="custom__status__item hot">熱賣中</div>
                   <div class="custom__status__item instant">即時確認</div>
-                  <div class="custom__status__count">
+                  <div
+                    class="
+                      custom__status__count
+                      d-flex
+                      justify-space-between
+                      align-center
+                    "
+                  >
                     <svg-icon iconClass="plus" className="plus" />
                     <span> 300+個已訂購 </span>
                   </div>
                 </div>
                 <!-- info -->
-                <div class="custom__info">
+                <div class="custom__info d-flex justify-start align-center">
                   <div class="custom__location">
                     <svg-icon iconClass="location" className="location" />
                     <span>台灣 苗栗</span>
@@ -75,9 +84,11 @@
                   <div class="custom__delprice">TWD 500</div>
                 </div>
                 <!-- rating & price -->
-                <div class="custom__bottom">
+                <div
+                  class="custom__bottom d-flex justify-space-between align-end"
+                >
                   <!-- v-rating -->
-                  <div class="custom__rating">
+                  <div class="custom__rating d-flex justify-start align-center">
                     <v-rating
                       v-model="item.startRating"
                       background-color="#ff8800"
@@ -214,8 +225,6 @@ export default {
     padding: 30px 5px;
     .custom__shadowbox {
       position: relative;
-      display: flex;
-      flex-direction: column;
       height: 320px;
       border-radius: 6px;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
@@ -225,12 +234,9 @@ export default {
         border-top-right-radius: 6px;
         border-top-left-radius: 6px;
         .custom__tagarea {
-          display: flex;
-          justify-content: space-between;
           height: 30%;
           padding: 10px;
           .custom__tags {
-            display: flex;
             .custom__tag {
               font-size: 0.8rem;
               padding: 0 7px;
@@ -248,9 +254,6 @@ export default {
             }
           }
           .custom__heartarea {
-            display: flex;
-            justify-content: center;
-            align-items: center;
             width: 35px;
             height: 35px;
             border-radius: 100%;
@@ -276,9 +279,6 @@ export default {
         position: absolute;
         padding: 4px 8px;
         left: 5px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
         background: #26bec9;
         border-radius: 6px;
         color: white;
@@ -359,9 +359,6 @@ export default {
         }
         .custom__status {
           height: 20%;
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
           font-size: 0.6rem;
           .custom__status__item {
             padding: 1px 9px;
@@ -376,9 +373,6 @@ export default {
             }
           }
           .custom__status__count {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
             color: #6d6c6c;
             .plus {
               width: 13px;
@@ -394,9 +388,6 @@ export default {
           font-size: 0.6rem;
           color: #6d6c6c;
           .custom__location {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
             .location {
               width: 12px;
               height: 12px;
@@ -409,13 +400,7 @@ export default {
         }
         .custom__bottom {
           height: 20%;
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-end;
           .custom__rating {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
             font-size: 0.8rem;
             color: #6d6c6c;
           }

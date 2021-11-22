@@ -6,7 +6,7 @@
       :class="{ show: showSearch }"
     >
       <v-col>
-        <div class="searchmodal__header py-3 px-0">
+        <div class="searchmodal__header d-flex justify-space-between py-3 px-0">
           <div class="searchmodal__back" @click="closeHandler">
             <svg-icon iconClass="arrow" className="arrow" />
           </div>
@@ -71,8 +71,6 @@ export default {
     opacity: 1;
   }
   .searchmodal__header {
-    display: flex;
-    justify-content: space-between;
     .searchmodal__back {
       width: 54px;
       cursor: pointer;

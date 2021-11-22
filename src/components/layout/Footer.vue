@@ -7,13 +7,29 @@
             <v-col cols="12">
               <div class="footer__recommand">
                 <h3>美國熱門城市</h3>
-                <div class="footer__hotcity">
+                <div
+                  class="
+                    footer__hotcity
+                    d-flex
+                    flex-wrap
+                    justify-start
+                    align-center
+                  "
+                >
                   <div v-for="n in 18" :key="n" class="footer__hotcity__item">
                     關島
                   </div>
                 </div>
                 <h3>國內旅遊懶人包</h3>
-                <div class="footer__hotspot">
+                <div
+                  class="
+                    footer__hotspot
+                    d-flex
+                    flex-wrap
+                    justify-start
+                    align-center
+                  "
+                >
                   <div v-for="n in 18" :key="n" class="footer__hotspot__item">
                     台北景點
                   </div>
@@ -27,7 +43,7 @@
         <v-container>
           <v-row>
             <v-col cols="12" class="py-0 pt-sm-3">
-              <div class="footer__navbox">
+              <div class="footer__navbox d-flex align-center">
                 <div class="footer__nvabox__item">服務條款</div>
                 <div class="footer__nvabox__item">隱私權政策</div>
                 <div class="footer__nvabox__item">客服中心</div>
@@ -87,10 +103,6 @@ export default {
     display: none;
     .footer__recommand {
       .footer__hotcity {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        align-items: center;
         padding: 20px 0px;
         .footer__hotcity__item {
           font-size: 0.9rem;
@@ -104,10 +116,6 @@ export default {
         }
       }
       .footer__hotspot {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        align-items: center;
         padding: 20px 0px;
         .footer__hotspot__item {
           font-size: 0.9rem;
@@ -129,8 +137,6 @@ export default {
     color: white;
     font-size: 0.9rem;
     .footer__navbox {
-      display: flex;
-      align-items: center;
       height: 40px;
       .footer__nvabox__item {
         margin-right: 12px;
