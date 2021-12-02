@@ -1,40 +1,87 @@
 <template>
-  <v-container fluid id="product__page">
-    <CategoryBlock />
-    <v-container class="px-0">
+  <v-container fluid id="product__page" class="pa-0">
+    <v-container class="px-3">
+      <CategoryBlock />
+    </v-container>
+    <v-container class="px-3">
       <v-row>
-        <v-col cols="3">
-          <div class="test-content-a">
+        <v-col cols="12" lg="3">
+          <Frame :title="'篩選目的地'">
             <LocationSearch />
-          </div>
+          </Frame>
+          <Frame :title="'所有商品類別'">
+            <AllProductType />
+          </Frame>
+          <Frame>
+            <DatePickBlock />
+          </Frame>
+          <Frame>
+            <TourLanguage />
+          </Frame>
+          <Frame :title="'價錢(TWD)'">
+            <BudgetRange />
+          </Frame>
+          <Frame>
+            <JourneyTime />
+          </Frame>
+          <Frame>
+            <SubCategory />
+          </Frame>
+          <Frame>
+            <MapBlock />
+          </Frame>
+          <MobileFilterBlock />
         </v-col>
-        <v-col cols="9">
-          <div class="test-content-a">456</div>
+        <v-col cols="12" lg="9">
+          <ChipsBlock />
+          <ProductBlock />
         </v-col>
       </v-row>
     </v-container>
   </v-container>
 </template>
 <script>
+// Frame
+import Frame from "@/components/product/frame/Frame";
+
+// Left (PC)
 import CategoryBlock from "@/components/product/CategoryBlock";
 import LocationSearch from "@/components/product/LocationSearch";
+import AllProductType from "@/components/product/AllProductType";
+import DatePickBlock from "@/components/product/DatePickBlock";
+import TourLanguage from "@/components/product/TourLanguage";
+import BudgetRange from "@/components/product/BudgetRange";
+import JourneyTime from "@/components/product/JourneyTime";
+import SubCategory from "@/components/product/SubCategory";
+import MapBlock from "@/components/product/MapBlock";
+import MobileFilterBlock from "@/components/product/MobileFilterBlock";
+// Left(Mobile)
+
+// Right
+import ChipsBlock from "@/components/product/ChipsBlock";
+import ProductBlock from "@/components/product/ProductBlock";
 
 export default {
   name: "Product",
-  components: { CategoryBlock, LocationSearch },
+  components: {
+    Frame,
+    CategoryBlock,
+    LocationSearch,
+    AllProductType,
+    DatePickBlock,
+    TourLanguage,
+    BudgetRange,
+    JourneyTime,
+    SubCategory,
+    MapBlock,
+    MobileFilterBlock,
+    ChipsBlock,
+    ProductBlock,
+  },
 };
 </script>
 <style lang="scss" scoped>
 #product__page {
   background: #f5f5f5;
-}
-.test-content-a {
-  width: 100%;
-  /* border: 1px solid pink; */
-}
-.test-content-b {
-  width: 100%;
-  border: 1px solid orange;
-  /* height: 500px; */
 }
 </style>

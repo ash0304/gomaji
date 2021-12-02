@@ -49,7 +49,7 @@ export default {
   data() {
     return {
       responsiveObj: {
-        0: { items: 1, dots: false },
+        0: { items: 1, dots: false, stagePadding: 20 },
         600: { items: 2, dots: false },
         960: { items: 3, dots: false },
         1264: { items: 3, dots: false },
@@ -127,6 +127,15 @@ export default {
       .carousel__item__detail {
         opacity: 100;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #categoryblock__carousel {
+    position: relative;
+    ::v-deep .owl-stage {
+      right: 20px;
     }
   }
 }

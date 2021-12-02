@@ -87,7 +87,7 @@
         </div>
       </div>
       <!-- 搜尋時 加入d-flex 且d-none拆掉可用 -->
-      <div class="search__ing__box  flex-column d-none">
+      <div class="search__ing__box flex-column d-none">
         <div
           v-for="n in 8"
           :key="n"

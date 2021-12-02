@@ -23,7 +23,7 @@
                 <div class="custom__tagarea d-flex justify-space-between">
                   <!-- tags -->
                   <div class="custom__tags d-flex">
-                    <div class="custom__tag traval">國旅券適用</div>
+                    <div class="custom__tag travel">國旅券適用</div>
                     <div class="custom__tag art">藝fun券適用</div>
                   </div>
                   <!-- heart -->
@@ -247,7 +247,7 @@ export default {
               line-height: 22px;
               color: #fff;
               margin: 0px 2px;
-              &.traval {
+              &.travel {
                 background: #ff2d55;
               }
               &.art {
