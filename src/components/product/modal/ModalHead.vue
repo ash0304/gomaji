@@ -1,6 +1,8 @@
 <template>
   <div class="modal__header d-flex align-center justify-space-between pa-4">
-    <div @click="emitClose" class="close__btn">X</div>
+    <div @click="emitClose" class="close__btn">
+      <svg-icon iconClass="modalClose" className="modalClose" />
+    </div>
     <div class="title">{{ title }}</div>
     <div class="clear__btn">
       <div>清除</div>

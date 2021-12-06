@@ -1,6 +1,6 @@
 <template>
   <div class="m__filterblock d-block d-lg-none">
-    <div class="m__filter__box d-flex flex-nowrap">
+    <div class="m__filter__box d-flex flex-nowrap pt-3 pb-1 px-3">
       <!-- 篩選 -->
       <v-dialog
         v-model="showAll"
@@ -68,7 +68,7 @@
             v-bind="attrs"
             v-on="on"
           >
-            <svg-icon iconClass="fire" className="icon mr-1" />
+            <svg-icon iconClass="filter" className="icon mr-1" />
             <div class="text-body-2">所有商品類別</div>
           </div>
         </template>
@@ -91,13 +91,36 @@
             v-bind="attrs"
             v-on="on"
           >
-            <svg-icon iconClass="fire" className="icon mr-1" />
+            <svg-icon iconClass="schedule" className="icon mr-1" />
             <div class="text-body-2">出發日期</div>
           </div>
         </template>
         <v-card>
           <ModalHead @close="closeHandler" :title="'出發日期'" />
           <ModalDatePick />
+        </v-card>
+      </v-dialog>
+
+      <!-- 導覽語言 -->
+      <v-dialog
+        v-model="showDate"
+        fullscreen
+        hide-overlay
+        transition="dialog-bottom-transition"
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <div
+            class="m__filter__btn d-flex align-center justify-center l-size"
+            v-bind="attrs"
+            v-on="on"
+          >
+            <svg-icon iconClass="language" className="icon mr-1" />
+            <div class="text-body-2">導覽語言</div>
+          </div>
+        </template>
+        <v-card>
+          <ModalHead @close="closeHandler" :title="'導覽語言'" />
+          <TourLanguage />
         </v-card>
       </v-dialog>
 
@@ -114,7 +137,7 @@
             v-bind="attrs"
             v-on="on"
           >
-            <svg-icon iconClass="fire" className="icon mr-1" />
+            <svg-icon iconClass="price" className="icon mr-1" />
             <div class="text-body-2">價錢</div>
           </div>
         </template>
@@ -136,7 +159,7 @@
             v-bind="attrs"
             v-on="on"
           >
-            <svg-icon iconClass="location" className="icon mr-1" />
+            <svg-icon iconClass="filter" className="icon mr-1" />
             <div class="text-body-2">次分類</div>
           </div>
         </template>
@@ -146,7 +169,17 @@
         </v-card>
       </v-dialog>
     </div>
-    <div class="m__filter__resultbox d-flex align-center justify-space-between">
+    <!-- 搜尋結果 & 排序 -->
+    <div
+      class="
+        m__filter__resultbox
+        d-flex
+        align-center
+        justify-space-between
+        px-3
+        pt-3
+      "
+    >
       <div class="d-flex align-center justify-center">
         <div class="m__filter__resultnumber font-weight-black mr-1">3914</div>
         <div class="font-weight-black">項搜尋結果</div>
@@ -239,10 +272,11 @@ export default {
     width: auto;
     margin-right: 5px;
     margin-bottom: 5px;
-    border: 1px solid #4d4c4c;
+    border: 0.5px solid #333;
     border-radius: 6px;
     padding: 2px 8px;
     flex: 0 0 auto;
+    background: #fff;
     &.l-size {
       width: auto;
     }
@@ -255,8 +289,9 @@ export default {
   }
   .m__filter__sortbtn {
     width: auto;
+    background: #fff;
     padding: 2px 8px;
-    border: 1px solid #4d4c4c;
+    border: 0.5px solid #333;
     border-radius: 6px;
   }
 }

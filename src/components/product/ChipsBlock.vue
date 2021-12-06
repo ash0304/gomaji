@@ -13,32 +13,34 @@
       <v-chip close> 清除所有 </v-chip>
     </v-chip-group>
     <v-divider></v-divider>
-    <div class="d-flex flex-wrap flex-start align-center py-3">
+    <div
+      class="d-flex flex-wrap flex-start align-center py-3 font-weight-black"
+    >
       <div>排序:</div>
       <div class="d-flex justify-space-around align-center mx-1 my-1">
         <div class="ml-0 mr-2">|</div>
-        <svg-icon iconClass="cart" className="icon" />
+        <svg-icon iconClass="money" className="icon" />
         <div class="mx-1">價格排序</div>
       </div>
       <div class="d-flex justify-space-around align-center mx-1 my-1">
         <div class="ml-0 mr-2">|</div>
-        <svg-icon iconClass="cart" className="icon" />
-        <div class="mx-1">價格排序</div>
+        <svg-icon iconClass="bstar" className="icon" />
+        <div class="mx-1">評價排序</div>
       </div>
       <div class="d-flex justify-space-around align-center mx-1 my-1">
         <div class="ml-0 mr-2">|</div>
-        <svg-icon iconClass="cart" className="icon" />
-        <div class="mx-1">價格排序</div>
+        <svg-icon iconClass="bstar" className="icon" />
+        <div class="mx-1">更多排序</div>
       </div>
       <div class="d-flex justify-space-around align-center mx-1 my-1">
         <div class="ml-0 mr-2">|</div>
-        <svg-icon iconClass="cart" className="icon" />
-        <div class="mx-1">價格排序</div>
+        <svg-icon iconClass="bstar" className="icon" />
+        <div class="mx-1">更多排序</div>
       </div>
       <div class="d-flex justify-space-around align-center mx-1 my-1">
         <div class="ml-0 mr-2">|</div>
-        <svg-icon iconClass="cart" className="icon" />
-        <div class="mx-1">價格排序</div>
+        <svg-icon iconClass="bstar" className="icon" />
+        <div class="mx-1">更多排序</div>
       </div>
     </div>
   </div>
@@ -50,15 +52,15 @@ export default {
     return {
       number: 3914,
       tags: [
-        "Work",
-        "Home Improvement",
-        "Vacation",
-        "Food",
-        "Drawers",
-        "Shopping",
-        "Art",
-        "Tech",
-        "Creative Writing",
+        "戶外休閒",
+        "戶外休閒",
+        "戶外休閒",
+        "戶外休閒",
+        "戶外休閒",
+        "戶外休閒",
+        "戶外休閒",
+        "戶外休閒",
+        "戶外休閒",
       ],
     };
   },

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" viewBox="0 0 15 15">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Search" d="M13.577,14.756l-2.825-2.825a6.673,6.673,0,1,1,1.179-1.179l2.825,2.825a.833.833,0,0,1-1.179,1.179ZM1.667,6.667a5,5,0,1,0,5-5A5.006,5.006,0,0,0,1.667,6.667Z" fill="#afafaf"/>
+    </clipPath>
+  </defs>
+  <g id="Icons_Search2" data-name="Icons / Search2" transform="translate(0 0)">
+    <g id="组_18" data-name="组 18" transform="translate(0 0)">
+      <path id="Search-2" data-name="Search" d="M13.577,14.756l-2.825-2.825a6.673,6.673,0,1,1,1.179-1.179l2.825,2.825a.833.833,0,0,1-1.179,1.179ZM1.667,6.667a5,5,0,1,0,5-5A5.006,5.006,0,0,0,1.667,6.667Z" fill="#afafaf"/>
+    </g>
+  </g>
+</svg>

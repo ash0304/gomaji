@@ -1,7 +1,7 @@
 <template>
   <div class="location__block py-3">
     <div class="location__inputbox mb-3">
-      <svg-icon iconClass="phone" className="search" />
+      <svg-icon iconClass="whitesearch" className="search" />
       <input type="text" placeholder="搜尋目的地" class="location__input" />
     </div>
     <!-- 第一層 -->
@@ -323,10 +323,10 @@ export default {
     }
     .search {
       position: absolute;
-      width: 20px;
-      height: 20px;
-      left: 25px;
-      top: 10px;
+      width: 15px;
+      height: 15px;
+      left: 30px;
+      top: 13px;
     }
   }
   .location__checkbox {

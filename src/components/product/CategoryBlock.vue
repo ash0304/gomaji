@@ -59,32 +59,32 @@ export default {
         {
           id: 0,
           title: "分類A",
-          url: "https://image.kkday.com/v2/image/get/w_647%2Ch_280%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1867/20211013104802_kyi42/png",
+          url: require("@/assets/product/type01.png"),
         },
         {
           id: 1,
           title: "分類B",
-          url: "https://image.kkday.com/v2/image/get/w_647%2Ch_280%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1854/20211005072438_EaJJ4/png",
+          url: require("@/assets/product/type02.png"),
         },
         {
           id: 2,
           title: "分類C",
-          url: "https://image.kkday.com/v2/image/get/w_647%2Ch_280%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1867/20211013104802_kyi42/png",
+          url: require("@/assets/product/type03.png"),
         },
         {
           id: 3,
           title: "分類D",
-          url: "https://image.kkday.com/v2/image/get/w_647%2Ch_280%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1867/20211013104802_kyi42/png",
+          url: require("@/assets/product/type01.png"),
         },
         {
           id: 4,
           title: "分類E",
-          url: "https://image.kkday.com/v2/image/get/w_647%2Ch_280%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1867/20211013104802_kyi42/png",
+          url: require("@/assets/product/type02.png"),
         },
         {
           id: 5,
           title: "分類F",
-          url: "https://image.kkday.com/v2/image/get/w_647%2Ch_280%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1867/20211013104802_kyi42/png",
+          url: require("@/assets/product/type03.png"),
         },
       ],
     };

@@ -20,6 +20,11 @@ export default {
       dates: ["", ""],
     };
   },
+  methods: {
+    saveHandler() {
+      console.log("save");
+    },
+  },
 };
 </script>
 <style lang="scss" scoped></style>
