@@ -6,6 +6,8 @@
     color="warning"
     full-width
     range
+    locale="zh-tw"
+    :day-format="(date) => date.split('-')[2]"
   >
     <v-spacer></v-spacer>
     <!-- <v-btn text color="primary" @click="modal = false"> Cancel </v-btn> -->

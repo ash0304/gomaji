@@ -1,9 +1,9 @@
 <template>
-  <v-container fluid id="product__page" class="pa-0">
+  <v-container fluid id="product__page">
     <CategoryBlock />
     <v-container class="px-3">
       <v-row>
-        <v-col cols="12" lg="3" class="pb-0 px-0 pt-0 pt-lg-3">
+        <v-col cols="12" lg="3" class="pb-0 px-0 pt-3 pt-lg-3">
           <Frame :title="'篩選目的地'">
             <LocationSearch />
           </Frame>

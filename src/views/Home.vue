@@ -24,6 +24,8 @@
     <SplitPromoteBlock />
     <!-- Full Promotion Block -->
     <FullPromoteBlock />
+    <!-- Recommend City Block -->
+    <RecommendCity />
   </v-container>
 </template>
 
@@ -39,6 +41,7 @@ import RecentBlock from "@/components/home/RecentBlock";
 import CustomCategoryBlock from "@/components/home/CustomCategoryBlock.vue";
 import SplitPromoteBlock from "@/components/home/SplitPromoteBlock.vue";
 import FullPromoteBlock from "@/components/home/FullPromoteBlock.vue";
+import RecommendCity from "@/components/home/RecommendCity.vue";
 
 export default {
   name: "Home",
@@ -54,6 +57,7 @@ export default {
     CustomCategoryBlock,
     SplitPromoteBlock,
     FullPromoteBlock,
+    RecommendCity,
   },
 };
 </script>

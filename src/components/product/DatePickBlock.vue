@@ -1,7 +1,7 @@
 <template>
   <div class="datepick__block">
     <div class="datepick__icon py-3">
-      <svg-icon iconClass="fire" className="fire" />
+      <svg-icon iconClass="schedule" className="schedule ml-1" />
     </div>
     <div class="datepick__pickbox py-3 px-1">
       <v-dialog
@@ -30,6 +30,8 @@
           color="warning"
           full-width
           range
+          locale="zh-tw"
+          :day-format="(date) => date.split('-')[2]"
         >
           <v-spacer></v-spacer>
           <!-- <v-btn text color="primary" @click="modal = false"> Cancel </v-btn> -->

@@ -1,13 +1,16 @@
 <template>
-  <v-container class="px-0">
+  <v-container class="px-0 pt-4 pt-md-8 promoteblock">
     <v-row>
       <v-col cols="12" class="pr-0 pr-lg-3">
+        <h2>廣告</h2>
         <carousel
-          id="categoryblock__carousel"
+          id="detailpromote__carousel"
           :margin="5"
           :responsive="responsiveObj"
           :dots="false"
           :nav="false"
+          :slideBy="'page'"
+          :autoplay="true"
         >
           <!-- prev -->
           <Prev slot="prev" />
@@ -23,11 +26,12 @@
                   carousel__item__detail
                   d-flex
                   flex-column
-                  justify-center
-                  align-center
+                  justify-space-around
+                  align-start
                 "
               >
                 <div>{{ item.title }}</div>
+                <div>更多內容 >></div>
               </div>
             </div>
           </div>
@@ -44,12 +48,12 @@ import Prev from "@/components/home/carousel/Prev";
 import Next from "@/components/home/carousel/Next";
 
 export default {
-  name: "CategoryBlock",
+  name: "DetailPromoteBlock",
   components: { carousel, Prev, Next },
   data() {
     return {
       responsiveObj: {
-        0: { items: 1, dots: false, stagePadding: 20 },
+        0: { items: 1, dots: true },
         600: { items: 2, dots: false },
         960: { items: 3, dots: false },
         1264: { items: 3, dots: false },
@@ -58,33 +62,33 @@ export default {
       promoteList: [
         {
           id: 0,
-          title: "分類A",
-          url: require("@/assets/product/type01.png"),
+          title: "精選台灣一日遊、景點、特色住宿&體驗",
+          url: "https://image.kkday.com/v2/image/get/w_647%2Ch_280%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1867/20211013104802_kyi42/png",
         },
         {
           id: 1,
-          title: "分類B",
-          url: require("@/assets/product/type02.png"),
+          title: "精選台灣一日遊、景點、特色住宿&體驗",
+          url: "https://image.kkday.com/v2/image/get/w_647%2Ch_280%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1854/20211005072438_EaJJ4/png",
         },
         {
           id: 2,
-          title: "分類C",
-          url: require("@/assets/product/type03.png"),
+          title: "精選台灣一日遊、景點、特色住宿&體驗",
+          url: "https://image.kkday.com/v2/image/get/w_647%2Ch_280%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1867/20211013104802_kyi42/png",
         },
         {
           id: 3,
-          title: "分類D",
-          url: require("@/assets/product/type01.png"),
+          title: "精選台灣一日遊、景點、特色住宿&體驗",
+          url: "https://image.kkday.com/v2/image/get/w_647%2Ch_280%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1867/20211013104802_kyi42/png",
         },
         {
           id: 4,
-          title: "分類E",
-          url: require("@/assets/product/type02.png"),
+          title: "精選台灣一日遊、景點、特色住宿&體驗",
+          url: "https://image.kkday.com/v2/image/get/w_647%2Ch_280%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1867/20211013104802_kyi42/png",
         },
         {
           id: 5,
-          title: "分類F",
-          url: require("@/assets/product/type03.png"),
+          title: "精選台灣一日遊、景點、特色住宿&體驗",
+          url: "https://image.kkday.com/v2/image/get/w_647%2Ch_280%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1867/20211013104802_kyi42/png",
         },
       ],
     };
@@ -92,7 +96,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-#categoryblock__carousel {
+#detailpromote__carousel {
   position: relative;
 }
 .carousel__item {
@@ -127,15 +131,6 @@ export default {
       .carousel__item__detail {
         opacity: 100;
       }
-    }
-  }
-}
-
-@media screen and (max-width: 600px) {
-  #categoryblock__carousel {
-    position: relative;
-    ::v-deep .owl-stage {
-      right: 20px;
     }
   }
 }

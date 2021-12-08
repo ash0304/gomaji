@@ -113,7 +113,7 @@
             <div v-if="!item.isSold" class="text-h6 product__price">
               {{ item.price }}
             </div>
-            <div v-if="item.isSold" class="text-h6 product__soldout">
+            <div v-if="item.isSold" class="text-body-2 pb-2 product__soldout">
               已售鑿
             </div>
           </v-col>
@@ -249,7 +249,7 @@
             <div v-if="!item.isSold" class="text-h6 product__price">
               {{ item.price }}
             </div>
-            <div v-if="item.isSold" class="text-h6 product__soldout">
+            <div v-if="item.isSold" class="text-body-2 pb-2 product__soldout">
               已售鑿
             </div>
           </v-col>

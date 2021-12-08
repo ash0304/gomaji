@@ -1,44 +1,6 @@
 <template>
   <v-footer :height="height" class="pa-0">
     <div class="footer">
-      <div class="footer__white__bar d-md-block">
-        <v-container>
-          <v-row>
-            <v-col cols="12">
-              <div class="footer__recommand">
-                <h3>美國熱門城市</h3>
-                <div
-                  class="
-                    footer__hotcity
-                    d-flex
-                    flex-wrap
-                    justify-start
-                    align-center
-                  "
-                >
-                  <div v-for="n in 18" :key="n" class="footer__hotcity__item">
-                    關島
-                  </div>
-                </div>
-                <h3>國內旅遊懶人包</h3>
-                <div
-                  class="
-                    footer__hotspot
-                    d-flex
-                    flex-wrap
-                    justify-start
-                    align-center
-                  "
-                >
-                  <div v-for="n in 18" :key="n" class="footer__hotspot__item">
-                    台北景點
-                  </div>
-                </div>
-              </div>
-            </v-col>
-          </v-row>
-        </v-container>
-      </div>
       <div class="footer__gray__bar">
         <v-container>
           <v-row>
@@ -80,11 +42,11 @@ export default {
         case "sm":
           return 85;
         case "md":
-          return 535;
+          return 85;
         case "lg":
-          return 465;
+          return 85;
         case "xl":
-          return 465;
+          return 85;
         default:
           return null;
       }
@@ -96,40 +58,6 @@ export default {
 .footer {
   width: 100%;
   height: 100%;
-  .footer__white__bar {
-    width: 100%;
-    height: auto;
-    background: white;
-    display: none;
-    .footer__recommand {
-      .footer__hotcity {
-        padding: 20px 0px;
-        .footer__hotcity__item {
-          font-size: 0.9rem;
-          width: auto;
-          height: 30px;
-          padding: 5px 15px;
-          margin: 8px;
-          border-right: 1px solid #6d6c6c;
-          color: #6d6c6c;
-          cursor: pointer;
-        }
-      }
-      .footer__hotspot {
-        padding: 20px 0px;
-        .footer__hotspot__item {
-          font-size: 0.9rem;
-          width: auto;
-          height: 30px;
-          padding: 5px 15px;
-          margin: 8px;
-          border-right: 1px solid #6d6c6c;
-          color: #6d6c6c;
-          cursor: pointer;
-        }
-      }
-    }
-  }
   .footer__gray__bar {
     width: 100%;
     height: 85px;
