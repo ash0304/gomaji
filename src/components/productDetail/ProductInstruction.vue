@@ -1,6 +1,6 @@
 <template>
   <v-col cols="12" class="productinstruction__page py-10">
-    <h2 id="productinstruction" class="productinstruction__title mb-3 pl-3">
+    <h2 id="h2__productinstruction" class="productinstruction__title mb-3 pl-3">
       商品說明
     </h2>
     <div class="productinstruction__contentbox">

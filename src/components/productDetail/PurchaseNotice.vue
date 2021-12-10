@@ -1,6 +1,6 @@
 <template>
   <v-col cols="12" class="purchasenotice__page py-10">
-    <h2 id="purchasenotice" class="purchasenotice__title mb-3 pl-3">
+    <h2 id="h2__purchasenotice" class="purchasenotice__title mb-3 pl-3">
       購買注意事項
     </h2>
     <v-col cols="12">

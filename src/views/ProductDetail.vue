@@ -39,49 +39,49 @@
     </v-container>
     <div class="gap" />
     <!-- 選擇方案 -->
-    <v-container>
+    <v-container id="planblocks">
       <v-row>
         <PlanBlocks />
       </v-row>
     </v-container>
     <div class="gap" />
     <!-- 商品說明 -->
-    <v-container>
+    <v-container id="productinstruction">
       <v-row>
         <ProductInstruction />
       </v-row>
     </v-container>
     <div class="gap" />
     <!-- 購買注意事項 -->
-    <v-container>
+    <v-container id="purchasenotice">
       <v-row>
         <PurchaseNotice />
       </v-row>
     </v-container>
     <div class="gap" />
     <!-- 使用說明 -->
-    <v-container>
+    <v-container id="usedescription">
       <v-row>
         <UseDescription />
       </v-row>
     </v-container>
     <div class="gap" />
     <!-- 取消政策 -->
-    <v-container>
+    <v-container id="cancelpolicy">
       <v-row>
         <CancelPolicy />
       </v-row>
     </v-container>
     <div class="gap" />
     <!-- 體驗地點 -->
-    <v-container>
+    <v-container id="experiencelocation">
       <v-row>
         <ExperienceLocation />
       </v-row>
     </v-container>
     <div class="gap" />
     <!-- 旅客評價 -->
-    <v-container>
+    <v-container id="passengerreviews">
       <v-row>
         <PassengerReviews />
       </v-row>

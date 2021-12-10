@@ -1,6 +1,6 @@
 <template>
   <v-col cols="12" class="usedescription__page py-10">
-    <h2 id="usedescription" class="usedescription__title mb-3 pl-3">
+    <h2 id="h2__usedescription" class="usedescription__title mb-3 pl-3">
       使用說明
     </h2>
     <div class="text-body-2">

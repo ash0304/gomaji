@@ -1,6 +1,8 @@
 <template>
   <v-col cols="12" class="cancelpolicy__page py-10">
-    <h2 id="cancelpolicy" class="cancelpolicy__title mb-3 pl-3">取消政策</h2>
+    <h2 id="h2__cancelpolicy" class="cancelpolicy__title mb-3 pl-3">
+      取消政策
+    </h2>
     <div class="text-body-2">
       <div>免費取消！</div>
       注意：由於站內商品來自全球各地，訂單取消時間將依該供應商所在時區判定。

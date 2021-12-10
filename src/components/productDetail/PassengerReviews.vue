@@ -1,6 +1,8 @@
 <template>
   <v-col cols="12" class="passengerReviews__page py-10">
-    <h2 id="passengerreviews" class="passengerReviews__title pl-3">旅客評價</h2>
+    <h2 id="h2__passengerreviews" class="passengerReviews__title pl-3">
+      旅客評價
+    </h2>
     <v-col cols="12">
       <v-col cols="12" lg="7">
         <div
