@@ -1,15 +1,5 @@
 <template>
   <v-col cols="12" class="pa-2">
-    <!-- <div class="detailtabs__box d-flex flex-nowrap pb-2">
-      <div
-        v-for="item in tabList"
-        :key="item.id"
-        class="detailtabs__item mr-5"
-        @click="scrollToTarget(item.target)"
-      >
-        {{ item.name }}
-      </div>
-    </div> -->
     <carousel
       id="detailtabs__carousel"
       :responsive="responsiveObj"

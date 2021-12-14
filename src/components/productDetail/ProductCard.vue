@@ -32,9 +32,12 @@
         <div class="text-caption ml-1 pt-1">500+個已訂購</div>
       </div>
       <div class="productcard__planbtn">選擇方案</div>
-      <div class="text-caption mt-2">立即出票</div>
+      <div class="d-flex mt-3">
+        <svg-icon iconClass="orangeflash" className="orangeflash" />
+        <div class="text-caption">立即出票</div>
+      </div>
     </div>
-    <div class="productcard__promite"></div>
+    <div class="productcard__promote"></div>
   </div>
 </template>
 <script>
@@ -65,9 +68,11 @@ export default {
     cursor: pointer;
   }
 }
-.productcard__promite {
+.productcard__promote {
   border-radius: 6px;
-  background: beige;
+  background: url("../../assets/productDetail/promote.png") no-repeat;
+  background-size: cover;
+  background-position: center;
   width: 100%;
   height: 113px;
 }

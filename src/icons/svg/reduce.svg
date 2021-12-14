@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#f80;stroke-width:2px}
+        </style>
+    </defs>
+    <g id="reduce-icon" transform="translate(-1182 -1572)">
+        <g id="Ellipse_14" data-name="Ellipse 14" class="cls-1" transform="translate(1182 1572)">
+            <circle cx="14" cy="14" r="14" style="stroke:none"/>
+            <circle cx="14" cy="14" r="13" style="fill:none"/>
+        </g>
+        <path id="Line_55" data-name="Line 55" class="cls-1" transform="translate(1188.5 1586.5)" d="M0 0h16"/>
+    </g>
+</svg>

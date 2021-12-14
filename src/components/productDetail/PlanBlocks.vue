@@ -5,7 +5,7 @@
       cols="12"
       v-for="(item, index) in planList"
       :key="index"
-      class="planblocks__planitem pa-0"
+      class="planblocks__planitem pa-0 my-3"
     >
       <v-col cols="12" class="planblocks__header pa-3 d-flex">
         <!-- 資訊區 -->
@@ -72,11 +72,30 @@
           </div>
           <div class="d-flex flex-column ml-3">
             <!-- Mobile用 (呼叫彈窗) -->
-            <div
-              class="d-block d-lg-none planblocks__chosebtn font-weight-black"
+            <v-dialog
+              v-model="item.isModal"
+              fullscreen
+              hide-overlay
+              transition="dialog-bottom-transition"
             >
-              取消選擇
-            </div>
+              <template v-slot:activator="{ on, attrs }">
+                <div
+                  class="
+                    d-block d-lg-none
+                    planblocks__chosebtn
+                    font-weight-black
+                  "
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  {{ item.isModal ? "取消選擇" : "選擇" }}
+                </div>
+              </template>
+              <v-card>
+                <ModalHead @close="closeHandler(item, $event)" />
+                <ModalDetail />
+              </v-card>
+            </v-dialog>
             <!-- PC用(向下展開) -->
             <div
               class="d-none d-lg-block planblocks__chosebtn font-weight-black"
@@ -107,24 +126,29 @@
       <!-- PC向下展開項目 -->
       <v-col
         cols="12"
-        class="planblocks__body pa-0"
+        class="planblocks__body pa-0 d-none d-lg-block"
         :class="{ expend: item.isExpended }"
       >
-        <v-col cols="12">
+        <v-col cols="12" class="py-0">
           <div class="planblocks__about d-flex align-center text-body-2 pa-3">
             <div class="font-weight-black mr-10">關於此方案</div>
             <div class="d-flex">
-              <svg-icon iconClass="fire" className="fire mx-1" />
+              <svg-icon
+                iconClass="moneyrecycle"
+                className="moneyrecycle mx-1"
+              />
               <div>免費取消 !</div>
             </div>
             <div class="d-flex ml-6">
-              <svg-icon iconClass="fire" className="fire mx-1" />
+              <svg-icon iconClass="orangeflash" className="orangeflash mx-1" />
               <div>立即確認</div>
             </div>
           </div>
         </v-col>
-        <v-col cols="12">
+        <v-col cols="12" class="d-flex justify-space-between py-0">
           <v-col cols="12" lg="5">
+            <div class="font-weight-black mb-2">選擇日期、選項</div>
+            <div class="text-body-2">請選擇使用日期</div>
             <v-date-picker
               v-model="item.date"
               no-title
@@ -135,24 +159,161 @@
               :day-format="(date) => date.split('-')[2]"
             >
             </v-date-picker>
+            <div class="planblocks__divider mt-2 mb-6"></div>
+            <TimePicker />
           </v-col>
-          <v-col cols="12" lg="7"> </v-col>
+          <v-col cols="12" lg="6">
+            <div class="planblocks__resetbox d-flex justify-end align-center">
+              <svg-icon iconClass="reset" className="reset mr-2" />
+              <div>全部重選</div>
+            </div>
+            <!-- 餐點標籤 -->
+            <div class="planblocks__optionlabel text-body-2 mb-2 mt-4">
+              餐點
+            </div>
+            <!-- 餐點選項 -->
+            <div class="d-flex">
+              <div class="planblocks__tribtn text-body-2 mr-2 active">早餐</div>
+              <div class="planblocks__tribtn text-body-2 mr-2">下午茶</div>
+            </div>
+            <!-- 專案選擇標籤 -->
+            <div class="planblocks__optionlabel text-body-2 mb-2 mt-4">
+              專案選擇
+            </div>
+            <!-- 專案選擇選項 -->
+            <div class="d-flex">
+              <div class="planblocks__tribtn text-body-2 mr-2 active">
+                一泊一食
+              </div>
+              <div class="planblocks__tribtn text-body-2 mr-2">景點輕鬆遊</div>
+            </div>
+            <!-- 數量標籤 -->
+            <div class="planblocks__optionlabel text-body-2 mb-2 mt-4">
+              選擇數量
+            </div>
+            <!-- 數量選項 -->
+            <div
+              v-for="(item, index) in headcountList"
+              :key="index"
+              class="d-flex align-center justify-space-between my-6"
+            >
+              <div class="d-flex align-end">
+                <div class="text-body-1 font-weight-black mr-1">
+                  {{ item.title }}
+                </div>
+                <div class="text-body-2 planblocks__supplement">
+                  ({{ item.label }})
+                </div>
+              </div>
+              <div class="d-flex align-end">
+                <div class="planblocks__delprice text-body-2 mr-1">
+                  {{ item.deletePrice }}
+                </div>
+                <div class="planblocks__price text-body-1">
+                  TWD {{ item.price }} / 每組
+                </div>
+                <svg-icon
+                  iconClass="reduce"
+                  className="reduce mx-2"
+                  :class="{ zero: item.count === 0 }"
+                  @click="reduceHandler(item)"
+                />
+                <div class="mx-2">{{ item.count }}</div>
+                <svg-icon
+                  iconClass="increase"
+                  className="increase mx-2"
+                  @click="increaseHandler(item)"
+                />
+              </div>
+            </div>
+            <div class="planblocks__divider mt-2 mb-6"></div>
+            <!-- 總金額 -->
+            <div class="d-flex align-center justify-space-between mb-10">
+              <div class="planblocks__optionlabel text-body-2">總金額</div>
+              <div class="d-flex align-end">
+                <div class="text-body-2 mr-2">TWD</div>
+                <div class="planblocks__totalprice font-weight-black">720</div>
+              </div>
+            </div>
+            <!-- 加入購物車 & 立即訂購 -->
+            <div class="d-flex align-center justify-end">
+              <div class="planblocks__addcartbtn ml-4">加入購物車</div>
+              <div class="planblocks__buybtn ml-4">立即訂購</div>
+            </div>
+          </v-col>
         </v-col>
       </v-col>
     </v-col>
   </v-col>
 </template>
 <script>
+import TimePicker from "@/components/productDetail/timePicker/TimePicker";
+import ModalHead from "@/components/productDetail/modal/ModalHead";
+import ModalDetail from "@/components/productDetail/modal/ModalDetail";
+
 export default {
   name: "PlanBlocks",
+  components: { TimePicker, ModalHead, ModalDetail },
   data() {
     return {
+      headcountList: [
+        {
+          id: 0,
+          title: "成人",
+          label: "7歲以上",
+          count: 0,
+          price: 720,
+          deletePrice: "TWD 810",
+        },
+        {
+          id: 1,
+          title: "兒童",
+          label: "3-7歲",
+          count: 0,
+          price: 150,
+          deletePrice: "",
+        },
+        {
+          id: 2,
+          title: "嬰幼兒",
+          label: "0-3歲",
+          count: 0,
+          price: 150,
+          deletePrice: "",
+        },
+      ],
       planList: [
         {
           id: 0,
           title: "紀念套票: kkday水族館雙人套組",
           isExpended: false,
           isMore: false,
+          isModal: false,
+          isSold: false,
+          price: 720,
+          delPrice: 810,
+          discount: 28,
+          date: "",
+        },
+        {
+          id: 1,
+          title: "澎湖水族館門票",
+          isExpended: false,
+          isMore: false,
+          isModal: false,
+          isSold: false,
+          price: 720,
+          delPrice: 810,
+          discount: 28,
+          date: "",
+        },
+        {
+          id: 2,
+          title: "萬聖節幽暗城堡歷險記",
+          isExpended: false,
+          isMore: false,
+          isModal: false,
+          isSold: true,
           price: 720,
           delPrice: 810,
           discount: 28,
@@ -166,7 +327,24 @@ export default {
       item.isMore = !item.isMore;
     },
     expendHandler(item) {
-      item.isExpended = !item.isExpended;
+      if (item.isExpended) {
+        item.isExpended = !item.isExpended;
+      } else {
+        this.planList.forEach((plan) => {
+          plan.isExpended = false;
+        });
+        item.isExpended = !item.isExpended;
+      }
+    },
+    closeHandler(item, value) {
+      item.isModal = value.status;
+    },
+    increaseHandler(item) {
+      item.count++;
+    },
+    reduceHandler(item) {
+      if (item.count === 0) return;
+      item.count--;
     },
   },
 };
@@ -213,9 +391,38 @@ export default {
       color: #ff2d55;
       font-weight: bold;
     }
+    .reduce,
+    .increase {
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      &.zero {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
     .planblocks__delprice {
       text-decoration: line-through;
       color: grey;
+    }
+    .planblocks__totalprice {
+      color: #ff2d55;
+    }
+    .planblocks__addcartbtn {
+      padding: 8px 12px;
+      color: white;
+      background: #ff8800;
+      border-radius: 2px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .planblocks__buybtn {
+      padding: 8px 12px;
+      color: white;
+      background: #ff2d55;
+      border-radius: 2px;
+      text-align: center;
+      cursor: pointer;
     }
     .planblocks__chosebtn {
       font-size: 0.8rem;
@@ -256,11 +463,11 @@ export default {
     }
 
     .planblocks__body {
-      border: 1px solid red;
       height: 0px;
       overflow: hidden;
+      transition: height 0.3s ease-in-out;
       &.expend {
-        height: auto;
+        height: 650px;
         overflow: auto;
       }
       .planblocks__about {
@@ -268,7 +475,94 @@ export default {
         border-radius: 6px;
         height: 65px;
       }
+      .planblocks__divider {
+        opacity: 0.5;
+        border: 1px solid #707070;
+      }
+      .planblocks__resetbox {
+        cursor: pointer;
+        color: #ff8800;
+        .reset {
+          width: 15px;
+          height: 15px;
+        }
+        &:hover {
+          .reset {
+            animation: reset 1s infinite ease-in;
+          }
+        }
+      }
+      .planblocks__optionlabel {
+        color: #555555;
+      }
+      .planblocks__supplement {
+        color: #999999;
+      }
+      .planblocks__delprice {
+        text-decoration: line-through;
+        color: #999999;
+      }
+      .planblocks__price {
+        color: #6d6c6c;
+      }
+
+      .planblocks__tribtn {
+        position: relative;
+        padding: 8px 16px;
+        border-radius: 2px;
+        border: 2px solid #eaeaea;
+        color: #555555;
+        cursor: pointer;
+        &.active {
+          color: #fff;
+          background: #ff8800;
+          &::before {
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 0;
+            border-color: transparent white;
+            border-width: 0 10px 10px 0;
+            border-style: solid;
+            right: 2px;
+            top: 2px;
+          }
+        }
+        &:hover {
+          color: #fff;
+          background: #ff8800;
+          &::before {
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 0;
+            border-color: transparent white;
+            border-width: 0 10px 10px 0;
+            border-style: solid;
+            right: 2px;
+            top: 2px;
+          }
+        }
+      }
     }
+  }
+}
+
+@keyframes reset {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 </style>

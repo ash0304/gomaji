@@ -7,12 +7,49 @@
       <svg-icon iconClass="location" className="location" />
       <div class="text-body-2 ml-2">台中 苗栗</div>
     </div>
+    <div class="d-flex d-lg-none align-end">
+      <div class="text-caption mx-1">TWD</div>
+      <div class="productinfo__price font-weight-black mx-1">300</div>
+      <div class="text-caption mx-1">起</div>
+    </div>
+    <div class="d-flex align-center d-lg-none mt-1">
+      <svg-icon iconClass="star" className="star" />
+      <svg-icon iconClass="star" className="star" />
+      <svg-icon iconClass="star" className="star" />
+      <svg-icon iconClass="star" className="star" />
+      <svg-icon iconClass="halfstar" className="halfstar" />
+      <div class="text-body-2 ml-2">(75)</div>
+      <svg-icon iconClass="fire" className="fire ml-3 mt-1" />
+      <div class="text-caption ml-1 pt-1">500+個已訂購</div>
+    </div>
+    <!-- 優惠Mobile顯示 -->
+    <div class="productinfo__promote d-block d-lg-none mt-3"></div>
     <div class="divide__line my-6"></div>
-    <div class="productinfo__hint d-flex align-center justify-start">
-      <svg-icon iconClass="price" className="price" />
-      <div class="text-body-2 ml-1">免費取消 !</div>
-      <svg-icon iconClass="phone" className="phone ml-3" />
-      <div class="text-body-2 ml-1">現場請出示 QR code</div>
+    <div
+      class="
+        productinfo__hint
+        d-flex
+        flex-column flex-lg-row
+        align-lg-center
+        justify-lg-start
+      "
+    >
+      <!-- Mobile 顯示 -->
+      <div class="d-flex my-1">
+        <svg-icon
+          iconClass="orangeflash"
+          className="d-block d-lg-none orangeflash "
+        />
+        <div class="d-block d-lg-none text-body-2 ml-1 mr-3">立即出票</div>
+      </div>
+      <div class="d-flex my-1">
+        <svg-icon iconClass="moneyrecycle" className="moneyrecycle" />
+        <div class="text-body-2 ml-1 mr-3">免費取消 !</div>
+      </div>
+      <div class="d-flex my-1">
+        <svg-icon iconClass="phone" className="phone" />
+        <div class="text-body-2 ml-1 mr-3">現場請出示 QR code</div>
+      </div>
     </div>
     <div class="divide__line my-6"></div>
     <div class="productinfo__hinttext text-body-2">
@@ -47,6 +84,25 @@ export default {
       width: 12px;
       height: 14px;
     }
+  }
+  .productinfo__price {
+    color: #ff2d55;
+  }
+  .star {
+    width: 13px;
+    height: 13px;
+  }
+  .halfstar {
+    width: 13px;
+    height: 13px;
+  }
+  .productinfo__promote {
+    border-radius: 6px;
+    background: url("../../assets/productDetail/promote.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 360px;
+    height: 90px;
   }
   .divide__line {
     width: 100%;

@@ -52,6 +52,37 @@
           </div>
         </div>
         <div class="divide__line mt-12"></div>
+        <!-- 查看更多 -->
+        <div class="d-block d-lg-none">
+          <v-dialog
+            v-model="isReviews"
+            fullscreen
+            hide-overlay
+            transition="dialog-bottom-transition"
+          >
+            <template v-slot:activator="{ on, attrs }">
+              <div
+                class="
+                  passengerReviews__morerbox
+                  d-flex
+                  justify-end
+                  align-center
+                  mt-1
+                "
+                v-bind="attrs"
+                v-on="on"
+              >
+                <div class="passengerReviews__morereview">更多評價</div>
+                <i class="arrow right"></i>
+              </div>
+            </template>
+            <v-card>
+              <ReviewHead @close="closeHandler" />
+              <ReviewDetail />
+            </v-card>
+          </v-dialog>
+        </div>
+
         <!-- 評價項目 -->
         <div v-for="n in 5" :key="n" class="passengerReviews__reviewitem py-12">
           <div class="passengerReviews__headerbox d-flex align-center mb-2">
@@ -94,12 +125,22 @@
   </v-col>
 </template>
 <script>
+import ReviewHead from "@/components/productDetail/modal/ReviewHead";
+import ReviewDetail from "@/components/productDetail/modal/ReviewDetail";
+
 export default {
   name: "PassengerReviews",
+  components: { ReviewHead, ReviewDetail },
   data() {
     return {
       page: 1,
+      isReviews: false,
     };
+  },
+  methods: {
+    closeHandler(value) {
+      this.isReviews = value.status;
+    },
   },
 };
 </script>
@@ -138,7 +179,23 @@ export default {
     border: solid 1px #707070;
     opacity: 0.5;
   }
-
+  .passengerReviews__morerbox {
+    cursor: pointer;
+    .passengerReviews__morereview {
+      color: #d2750a;
+    }
+    .arrow {
+      width: 10px;
+      height: 10px;
+      border: solid #d2750a;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 4px;
+      &.right {
+        transform: rotate(-45deg);
+      }
+    }
+  }
   .passengerReviews__reviewitem {
     border-bottom: 2px solid rgba(44, 44, 44, 0.5);
     .passengerReviews__headerbox {

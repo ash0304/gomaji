@@ -1,46 +1,38 @@
 <template>
-  <v-container class="px-0 pt-4 pt-md-8 promoteblock">
-    <v-row>
-      <v-col cols="12" class="pr-0 pr-lg-3">
-        <h2>廣告</h2>
-        <carousel
-          id="detailpromote__carousel"
-          :margin="5"
-          :responsive="responsiveObj"
-          :dots="false"
-          :nav="false"
-          :slideBy="'page'"
-          :autoplay="true"
-        >
-          <!-- prev -->
-          <Prev slot="prev" />
+  <v-col cols="12" class="pr-0 pr-lg-3">
+    <h2>廣告</h2>
+    <carousel
+      id="detailpromote__carousel"
+      :margin="5"
+      :responsive="responsiveObj"
+      :dots="false"
+      :nav="false"
+      :slideBy="'page'"
+      :autoplay="true"
+    >
+      <!-- prev -->
+      <Prev slot="prev" />
+      <div v-for="item in promoteList" :key="item.id" class="carousel__item">
+        <div class="carousel__shadowbox">
+          <img class="carousel__item__bg" :src="item.url" />
           <div
-            v-for="item in promoteList"
-            :key="item.id"
-            class="carousel__item"
+            class="
+              carousel__item__detail
+              d-flex
+              flex-column
+              justify-space-around
+              align-start
+            "
           >
-            <div class="carousel__shadowbox">
-              <img class="carousel__item__bg" :src="item.url" />
-              <div
-                class="
-                  carousel__item__detail
-                  d-flex
-                  flex-column
-                  justify-space-around
-                  align-start
-                "
-              >
-                <div>{{ item.title }}</div>
-                <div>更多內容 >></div>
-              </div>
-            </div>
+            <div>{{ item.title }}</div>
+            <div>更多內容 >></div>
           </div>
-          <!-- next -->
-          <Next slot="next" />
-        </carousel>
-      </v-col>
-    </v-row>
-  </v-container>
+        </div>
+      </div>
+      <!-- next -->
+      <Next slot="next" />
+    </carousel>
+  </v-col>
 </template>
 <script>
 import carousel from "vue-owl-carousel";

@@ -97,14 +97,22 @@
     <!-- 更多推薦行程 -->
     <v-container>
       <v-row>
-        <CustomCategoryBlock />
+        <DetailCategoryBlock />
       </v-row>
     </v-container>
     <div class="gap" />
+    <div v-if="showChose" class="bottom__div d-flex align-center px-3">
+      <div class="productdetail__lovebox d-flex justify-center align-center">
+        <svg-icon iconClass="love_line" className="love_line" />
+      </div>
+      <div class="productdetail__chosebtn" @click="scrollToTarget">
+        選擇方案
+      </div>
+    </div>
   </v-container>
 </template>
 <script>
-import DetailTabs from "@/components/productDetail/Tabs/DetailTabs";
+import DetailTabs from "@/components/productDetail/tabs/DetailTabs";
 
 import BreadCrumbs from "@/components/productDetail/BreadCrumbs";
 import ProductCarousel from "@/components/productDetail/ProductCarousel";
@@ -117,9 +125,9 @@ import UseDescription from "@/components/productDetail/UseDescription";
 import CancelPolicy from "@/components/productDetail/CancelPolicy";
 import ExperienceLocation from "@/components/productDetail/ExperienceLocation";
 import PassengerReviews from "@/components/productDetail/PassengerReviews";
-import DetailPromoteBlock from "@/components/productDetail/DetailPromoteBlock";
 
-import CustomCategoryBlock from "@/components/home/CustomCategoryBlock.vue";
+import DetailPromoteBlock from "@/components/productDetail/DetailPromoteBlock";
+import DetailCategoryBlock from "@/components/productDetail/DetailCategoryBlock.vue";
 
 export default {
   name: "ProductDetail",
@@ -137,15 +145,17 @@ export default {
     ExperienceLocation,
     PassengerReviews,
     DetailPromoteBlock,
-    CustomCategoryBlock,
+    DetailCategoryBlock,
   },
   data() {
     return {
       showTab: false,
+      showChose: false,
     };
   },
   mounted() {
     document.addEventListener("scroll", this.scrollHandler);
+    document.addEventListener("scroll", this.scrollHandler2);
   },
   methods: {
     scrollHandler() {
@@ -157,9 +167,26 @@ export default {
         this.showTab = false;
       }
     },
+    scrollHandler2() {
+      const here = document.getElementById("planblocks");
+
+      if (window.scrollY >= here.offsetTop + here.offsetHeight) {
+        this.showChose = true;
+      } else {
+        this.showChose = false;
+      }
+    },
+    scrollToTarget() {
+      const targetView = document.getElementById("h2__planblocks");
+      targetView.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    },
   },
   beforeDestroy() {
     document.removeEventListener("scroll", this.scrollHandler);
+    document.removeEventListener("scroll", this.scrollHandler2);
   },
 };
 </script>
@@ -178,6 +205,31 @@ export default {
     width: 100%;
     height: 20px;
     background: #f5f5f5;
+  }
+  .bottom__div {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: white;
+    box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.43);
+    .productdetail__lovebox {
+      width: 10%;
+      .love_line {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .productdetail__chosebtn {
+      width: 90%;
+      border-radius: 2px;
+      padding: 8px 12px;
+      background: #ff8800;
+      color: white;
+      text-align: center;
+      cursor: pointer;
+    }
   }
 }
 </style>
