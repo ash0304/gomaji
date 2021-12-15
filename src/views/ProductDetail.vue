@@ -101,7 +101,10 @@
       </v-row>
     </v-container>
     <div class="gap" />
-    <div v-if="showChose" class="bottom__div d-flex align-center px-3">
+    <div
+      v-if="showChose"
+      class="bottom__div d-flex d-lg-none align-center px-3"
+    >
       <div class="productdetail__lovebox d-flex justify-center align-center">
         <svg-icon iconClass="love_line" className="love_line" />
       </div>

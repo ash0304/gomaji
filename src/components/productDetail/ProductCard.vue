@@ -31,7 +31,7 @@
         <svg-icon iconClass="fire" className="fire ml-3 mt-1" />
         <div class="text-caption ml-1 pt-1">500+個已訂購</div>
       </div>
-      <div class="productcard__planbtn">選擇方案</div>
+      <div class="productcard__planbtn" @click="scrollToTarget">選擇方案</div>
       <div class="d-flex mt-3">
         <svg-icon iconClass="orangeflash" className="orangeflash" />
         <div class="text-caption">立即出票</div>
@@ -47,6 +47,15 @@ export default {
     return {
       rating: 4,
     };
+  },
+  methods: {
+    scrollToTarget() {
+      const targetView = document.getElementById("h2__planblocks");
+      targetView.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    },
   },
 };
 </script>
