@@ -130,7 +130,7 @@ export default {
           price: 150,
           rating: 75,
           url: require("@/assets/home/recent02.png"),
-          heartStatus: "love_line",
+          heartStatus: "love_empty",
           startRating: 4,
         },
         {
@@ -139,7 +139,7 @@ export default {
           price: 150,
           rating: 75,
           url: require("@/assets/home/recent01.png"),
-          heartStatus: "love_full",
+          heartStatus: "love_empty",
           startRating: 4,
         },
         {

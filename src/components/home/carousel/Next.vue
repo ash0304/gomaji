@@ -14,7 +14,7 @@ export default {
   position: absolute;
   top: 50%;
   transform: translateY(-38%);
-  right: -45px;
+  right: -55px;
   z-index: 5;
   background: url("../../../assets/home/next.png") no-repeat;
   background-size: cover;

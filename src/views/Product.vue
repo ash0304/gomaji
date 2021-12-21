@@ -1,5 +1,6 @@
 <template>
   <v-container fluid id="product__page">
+    <SearchProductInput />
     <CategoryBlock />
     <v-container class="px-3">
       <v-row>
@@ -43,6 +44,7 @@
 import Frame from "@/components/product/frame/Frame";
 
 // Left (PC)
+import SearchProductInput from "@/components/product/SearchProductInput";
 import CategoryBlock from "@/components/product/CategoryBlock";
 import LocationSearch from "@/components/product/LocationSearch";
 import AllProductType from "@/components/product/AllProductType";
@@ -63,6 +65,7 @@ export default {
   name: "Product",
   components: {
     Frame,
+    SearchProductInput,
     CategoryBlock,
     LocationSearch,
     AllProductType,

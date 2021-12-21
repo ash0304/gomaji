@@ -13,7 +13,7 @@
             v-for="child in item.items"
             :key="child.title"
             :color="'#ff8800'"
-            class="subcategory__item"
+            class="subcategory__item pl-3"
           >
             <v-checkbox
               :color="'#ff8800'"

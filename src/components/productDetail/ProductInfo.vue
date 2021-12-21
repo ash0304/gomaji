@@ -23,7 +23,23 @@
       <div class="text-caption ml-1 pt-1">500+個已訂購</div>
     </div>
     <!-- 優惠Mobile顯示 -->
-    <div class="productinfo__promote d-block d-lg-none mt-3"></div>
+    <!-- <div class="productinfo__promote d-block d-lg-none mt-3"></div> -->
+    <div class="d-block d-lg-none mt-3">
+      <carousel
+        id="productinfo__promote"
+        :responsive="responsiveObj"
+        :dots="false"
+        :nav="false"
+        :autoplay="true"
+      >
+        <div
+          v-for="item in promoteList"
+          :key="item.id"
+          class="productinfo__promote__item"
+          :style="styleObj(item)"
+        ></div>
+      </carousel>
+    </div>
     <div class="divide__line my-6"></div>
     <div
       class="
@@ -68,8 +84,57 @@
   </div>
 </template>
 <script>
+import carousel from "vue-owl-carousel";
+
 export default {
   name: "ProductInfo",
+  components: { carousel },
+  data() {
+    return {
+      responsiveObj: {
+        0: { items: 1, dots: true },
+        600: { items: 1, dots: true },
+        960: { items: 1, dots: true },
+        1264: { items: 1, dots: true },
+        1904: { items: 1, dots: true },
+      },
+      promoteList: [
+        {
+          id: 0,
+          url: require("@/assets/productDetail/promote.png"),
+        },
+        {
+          id: 1,
+          url: require("@/assets/productDetail/promote.png"),
+        },
+        {
+          id: 2,
+          url: require("@/assets/productDetail/promote.png"),
+        },
+        {
+          id: 3,
+          url: require("@/assets/productDetail/promote.png"),
+        },
+        {
+          id: 4,
+          url: require("@/assets/productDetail/promote.png"),
+        },
+        {
+          id: 5,
+          url: require("@/assets/productDetail/promote.png"),
+        },
+      ],
+    };
+  },
+  methods: {
+    styleObj(item) {
+      return {
+        background: `url(${item.url})`,
+        "background-size": "cover",
+        "background-position": "50%",
+      };
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -96,13 +161,27 @@ export default {
     width: 13px;
     height: 13px;
   }
-  .productinfo__promote {
-    border-radius: 6px;
-    background: url("../../assets/productDetail/promote.png") no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 360px;
-    height: 90px;
+  #productinfo__promote {
+    position: relative;
+    .productinfo__promote__item {
+      height: 113px;
+    }
+    ::v-deep .owl-dots {
+      margin-top: 0;
+      .owl-dot {
+        span {
+          width: 30px;
+          height: 5px;
+        }
+        &.active {
+          span {
+            background: #afafaf;
+            width: 30px;
+            height: 5px;
+          }
+        }
+      }
+    }
   }
   .divide__line {
     width: 100%;

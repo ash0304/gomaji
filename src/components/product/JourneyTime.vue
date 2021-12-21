@@ -13,7 +13,7 @@
             v-for="child in item.items"
             :key="child.title"
             :color="'#ff8800'"
-            class="journey__timeitem"
+            class="journey__timeitem pl-3"
           >
             <v-checkbox
               :color="'#ff8800'"

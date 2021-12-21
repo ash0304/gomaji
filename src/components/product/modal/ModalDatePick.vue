@@ -7,6 +7,7 @@
     full-width
     range
     locale="zh-tw"
+    :show-current="false"
     :day-format="(date) => date.split('-')[2]"
   >
     <v-spacer></v-spacer>

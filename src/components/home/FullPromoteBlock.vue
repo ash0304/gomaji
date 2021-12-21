@@ -15,5 +15,6 @@ export default {
   background: url("../../assets/home/fullBanner.png");
   background-position: 50%;
   background-size: cover;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
 }
 </style>

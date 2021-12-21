@@ -108,6 +108,7 @@ export default {
   .carousel__shadowbox {
     position: relative;
     border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
     overflow: hidden;
     .carousel__item__bg {
       border-radius: 6px;

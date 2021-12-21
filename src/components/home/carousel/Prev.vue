@@ -14,7 +14,7 @@ export default {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: -45px;
+  left: -55px;
   z-index: 5;
   background: url("../../../assets/home/prev.png") no-repeat;
   background-size: cover;

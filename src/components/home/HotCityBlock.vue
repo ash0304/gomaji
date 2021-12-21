@@ -128,6 +128,7 @@ export default {
       width: 100%;
       height: 218px;
       border-radius: 6px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
       .hotcity__carousel__overlap {
         position: absolute;
         left: 0;
@@ -156,6 +157,7 @@ export default {
     margin: 0 7.5px;
     transition: 0.2s all ease-in-out;
     border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
     cursor: pointer;
     .hotcity__overlap {
       position: absolute;

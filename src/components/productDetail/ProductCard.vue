@@ -37,15 +37,64 @@
         <div class="text-caption">立即出票</div>
       </div>
     </div>
-    <div class="productcard__promote"></div>
+    <carousel
+      id="productcard__promote"
+      :responsive="responsiveObj"
+      :dots="false"
+      :nav="false"
+      :autoplay="true"
+    >
+      <div
+        v-for="item in promoteList"
+        :key="item.id"
+        class="productcard__promote__item"
+        :style="styleObj(item)"
+      ></div>
+    </carousel>
   </div>
 </template>
 <script>
+import carousel from "vue-owl-carousel";
+
 export default {
   name: "ProductCard",
+  components: { carousel },
   data() {
     return {
       rating: 4,
+      responsiveObj: {
+        0: { items: 1, dots: true },
+        600: { items: 1, dots: true },
+        960: { items: 1, dots: true },
+        1264: { items: 1, dots: true },
+        1904: { items: 1, dots: true },
+      },
+      promoteList: [
+        {
+          id: 0,
+          url: require("@/assets/productDetail/promote.png"),
+        },
+        {
+          id: 1,
+          url: require("@/assets/productDetail/promote.png"),
+        },
+        {
+          id: 2,
+          url: require("@/assets/productDetail/promote.png"),
+        },
+        {
+          id: 3,
+          url: require("@/assets/productDetail/promote.png"),
+        },
+        {
+          id: 4,
+          url: require("@/assets/productDetail/promote.png"),
+        },
+        {
+          id: 5,
+          url: require("@/assets/productDetail/promote.png"),
+        },
+      ],
     };
   },
   methods: {
@@ -55,6 +104,13 @@ export default {
         behavior: "smooth",
         block: "center",
       });
+    },
+    styleObj(item) {
+      return {
+        background: `url(${item.url})`,
+        "background-size": "cover",
+        "background-position": "50%",
+      };
     },
   },
 };
@@ -77,12 +133,26 @@ export default {
     cursor: pointer;
   }
 }
-.productcard__promote {
-  border-radius: 6px;
-  background: url("../../assets/productDetail/promote.png") no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 113px;
+#productcard__promote {
+  position: relative;
+  .productcard__promote__item {
+    height: 113px;
+  }
+  ::v-deep .owl-dots {
+    margin-top: 0;
+    .owl-dot {
+      span {
+        width: 30px;
+        height: 5px;
+      }
+      &.active {
+        span {
+          background: #afafaf;
+          width: 30px;
+          height: 5px;
+        }
+      }
+    }
+  }
 }
 </style>

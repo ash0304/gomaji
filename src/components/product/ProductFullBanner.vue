@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col cols="12" class="px-0 py-3 fullbanner d-lg-none">
+    <v-col cols="12" class="px-0 py-3 fullbanner">
       <carousel
         id="fullbanner__carousel"
         :margin="5"
@@ -87,7 +87,8 @@ export default {
 #fullbanner__carousel {
   position: relative;
   .fullbanner__item {
-    height: 400px;
+    height: 274px;
+    border-radius: 6px;
   }
   ::v-deep .owl-dots {
     margin-top: 0;
@@ -98,11 +99,20 @@ export default {
       }
       &.active {
         span {
-          background: orange;
+          background: #afafaf;
           width: 30px;
           height: 5px;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1264px) {
+  #fullbanner__carousel {
+    position: relative;
+    .fullbanner__item {
+      height: 400px;
     }
   }
 }

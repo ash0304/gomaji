@@ -11,17 +11,9 @@
         width="500px"
       >
         <template v-slot:activator="{ on, attrs }">
-          <input
-            v-model="dateRangeText"
-            type="text"
-            label="Picker in dialog"
-            prepend-icon="mdi-calendar"
-            readonly
-            v-bind="attrs"
-            v-on="on"
-            class="datapick__input"
-            placeholder="出發日期"
-          />
+          <div v-bind="attrs" v-on="on" class="datepick__input">
+            {{ dateRangeText ? dateRangeText : "出發日期" }}
+          </div>
         </template>
         <v-date-picker
           v-model="dates"
@@ -31,6 +23,7 @@
           full-width
           range
           locale="zh-tw"
+          :show-current="false"
           :day-format="(date) => date.split('-')[2]"
         >
           <v-spacer></v-spacer>
@@ -81,6 +74,9 @@ export default {
       padding-left: 4px;
       font-size: 1rem;
       width: 100%;
+      text-align: center;
+      color: #333333;
+      font-weight: bold;
       &:focus {
         outline: none;
       }

@@ -13,7 +13,7 @@
             v-for="child in item.items"
             :key="child.title"
             :color="'#ff8800'"
-            class="tourlan__lanitem"
+            class="tourlan__lanitem pl-3"
           >
             <v-checkbox
               :color="'#ff8800'"

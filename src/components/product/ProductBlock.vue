@@ -24,7 +24,7 @@
         <!-- tags -->
       </v-col>
       <!-- right detail -->
-      <v-col cols="12" lg="7" class="product__right px-3 pt-3 pb-0">
+      <v-col cols="12" lg="7" class="product__right px-3 pt-3 pb-3">
         <!-- first -->
         <v-col cols="12" class="d-flex pa-0 mb-1">
           <v-col
@@ -160,7 +160,7 @@
         <!-- tags -->
       </v-col>
       <!-- right detail -->
-      <v-col cols="12" lg="7" class="product__right px-3 pt-3 pb-0">
+      <v-col cols="12" lg="7" class="product__right px-3 pt-3 pb-3">
         <!-- first -->
         <v-col cols="12" class="d-flex pa-0 mb-1">
           <v-col
