@@ -20,15 +20,23 @@
       <div class="cartcard__body pa-3">
         <CartItems />
       </div>
+      <!-- foot -->
+      <div class="cartcard__foot pa-3 pt-0">
+        <CartFoot />
+      </div>
+    </div>
+    <div class="cartcard__continue d-flex justify-end">
+      <div>繼續購物 ></div>
     </div>
   </div>
 </template>
 <script>
 import CartItems from "@/components/cart/CartItems";
+import CartFoot from "@/components/cart/CartFoot";
 
 export default {
   name: "CartCard",
-  components: { CartItems },
+  components: { CartItems, CartFoot },
   data() {
     return {
       items: [
@@ -75,9 +83,18 @@ export default {
     }
     .cartcard__body {
       background: white;
+    }
+    .cartcard__foot {
+      background: white;
       border-bottom-left-radius: 6px;
       border-bottom-right-radius: 6px;
     }
+  }
+  .cartcard__continue {
+    width: 100%;
+    margin: auto;
+    color: #ff8800;
+    cursor: pointer;
   }
 }
 
@@ -87,6 +104,9 @@ export default {
       width: 750px;
     }
     .cartcard__container {
+      width: 750px;
+    }
+    .cartcard__continue {
       width: 750px;
     }
   }

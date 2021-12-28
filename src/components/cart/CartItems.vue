@@ -7,7 +7,7 @@
     >
       <v-row>
         <!-- Checkbox -->
-        <v-col cols="1" lg="1">
+        <v-col cols="1" sm="1" md="1" lg="1">
           <v-checkbox
             v-model="item.checkbox"
             color="orange"
@@ -15,23 +15,27 @@
           ></v-checkbox>
         </v-col>
         <!-- Img -->
-        <v-col cols="2" lg="2">
+        <v-col cols="3" sm="2" md="2" lg="2">
           <div class="cartitem__imgbox">
             <div class="cartitem__img"></div>
           </div>
         </v-col>
         <!-- Info -->
-        <v-col cols="9" lg="7">
+        <v-col cols="8" sm="9" md="9" lg="7">
           <div class="cartitem__infobox">
             <div class="d-flex mb-1">
-              <div class="cartitem__title text-caption main">名稱</div>
-              <div class="cartitem__bold text-caption">
+              <div class="cartitem__title text-caption text-lg-body-2 main">
+                名稱
+              </div>
+              <div class="cartitem__bold text-caption text-lg-body-2">
                 {{ item.name }}
               </div>
             </div>
             <div class="d-flex mb-1">
-              <div class="cartitem__title text-caption main">方案</div>
-              <div class="cartitem__bold text-caption">
+              <div class="cartitem__title text-caption text-lg-body-2 main">
+                方案
+              </div>
+              <div class="cartitem__bold text-caption text-lg-body-2">
                 {{ item.plan }}
               </div>
             </div>
@@ -51,7 +55,7 @@
               <div class="cartitem__title text-caption">還件地:</div>
               <div class="text-caption">{{ item.return }}</div>
             </div>
-            <div class="d-flex mb-1">
+            <div class="d-flex flex-wrap mb-1">
               <div v-if="item.date" class="d-flex">
                 <svg-icon iconClass="schedule" className="schedule mx-1" />
                 <div class="text-caption">{{ item.date }}</div>
@@ -87,7 +91,7 @@
           </div>
         </v-col>
         <!-- Price & Delete -->
-        <v-col cols="0" lg="2" class="d-none d-lg-block">
+        <v-col cols="0" sm="0" md="0" lg="2" class="d-none d-lg-block">
           <div class="cartitem__pricebox d-flex align-center">
             <div class="d-flex font-weight-bold">
               <div class="cartitem__currency text-subtitle-1 font-weight-bold">
@@ -114,8 +118,8 @@ export default {
           id: 0,
           checkbox: false,
           imgUrl: "",
-          name: "台灣WIFI分享器租借|4G上網吃到飽|14天防疫隔離長租專案",
-          plan: "台灣WIFI分享器租借|4G上網吃到飽|14天防疫隔離長租專案",
+          name: "台灣WIFI分享器租借|4G上網吃到飽|14天防疫隔離長租專",
+          plan: "台灣WIFI分享器租借|4G上網吃到飽|14天防疫隔離長租專",
           day: "雙週14天",
           spec: "",
           receive: "桃園機場|第一航廈",
@@ -130,8 +134,8 @@ export default {
           id: 1,
           checkbox: false,
           imgUrl: "",
-          name: "台灣WIFI分享器租借|4G上網吃到飽|14天防疫隔離長租專案",
-          plan: "台灣WIFI分享器租借|4G上網吃到飽|14天防疫隔離長租專案",
+          name: "台灣WIFI分享器租借|4G上網吃到飽|14天防疫隔離長租專",
+          plan: "台灣WIFI分享器租借|4G上網吃到飽|14天防疫隔離長租專",
           day: "雙週14天",
           spec: "",
           receive: "宅配",
@@ -208,6 +212,16 @@ export default {
     }
     .cartitem__price {
       color: #ff2d55;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cartitem__container {
+    .cartitem__imgbox {
+      .cartitem__img {
+        height: 50px;
+      }
     }
   }
 }
