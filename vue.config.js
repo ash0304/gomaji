@@ -6,7 +6,7 @@ function resolve(dir) {
 }
 
 module.exports = {
-  transpileDependencies: ["vuetify"],
+  transpileDependencies: ["vuetify", "vue-tel-input-vuetify"],
   chainWebpack(config) {
     // set svg-sprite-loader
     config.module.rule("svg").exclude.add(resolve("src/icons")).end();

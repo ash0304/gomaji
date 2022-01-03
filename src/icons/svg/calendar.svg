@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11.577" height="9.998" viewBox="0 0 11.577 9.998">
+    <defs>
+        <style>
+            .cls-1{fill:#666}
+        </style>
+    </defs>
+    <g id="calendar-icon" transform="translate(-405.562 -327.75)">
+        <path id="Path_73" data-name="Path 73" class="cls-1" d="M416.054 328.856h-1.506v-1.106h-.348v1.106h-5.7v-1.106h-.351v1.106h-1.506a1.087 1.087 0 0 0-1.085 1.085v6.721a1.087 1.087 0 0 0 1.085 1.085h9.407a1.086 1.086 0 0 0 1.085-1.085v-6.721a1.086 1.086 0 0 0-1.081-1.085zm-9.407.351h1.506v1.106h.351v-1.106h5.696v1.106h.351v-1.106h1.506a.735.735 0 0 1 .734.735v1.477h-10.878v-1.477a.736.736 0 0 1 .734-.735zm9.407 8.191h-9.407a.736.736 0 0 1-.735-.735v-4.894h10.875v4.894a.735.735 0 0 1-.733.737z"/>
+        <path id="Rectangle_157" data-name="Rectangle 157" class="cls-1" transform="translate(406.827 333.175)" d="M0 0h1.295v.263H0z"/>
+        <path id="Rectangle_158" data-name="Rectangle 158" class="cls-1" transform="translate(410.703 333.175)" d="M0 0h1.295v.263H0z"/>
+        <path id="Rectangle_159" data-name="Rectangle 159" class="cls-1" transform="translate(414.579 333.175)" d="M0 0h1.295v.263H0z"/>
+        <path id="Rectangle_160" data-name="Rectangle 160" class="cls-1" transform="translate(406.827 335.299)" d="M0 0h1.295v.263H0z"/>
+        <path id="Rectangle_161" data-name="Rectangle 161" class="cls-1" transform="translate(410.703 335.299)" d="M0 0h1.295v.263H0z"/>
+        <path id="Rectangle_162" data-name="Rectangle 162" class="cls-1" transform="translate(414.579 335.299)" d="M0 0h1.295v.263H0z"/>
+    </g>
+</svg>

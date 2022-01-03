@@ -7,21 +7,23 @@
     >
       <v-row>
         <!-- Checkbox -->
-        <v-col cols="1" sm="1" md="1" lg="1">
-          <v-checkbox
-            v-model="item.checkbox"
-            color="orange"
-            value="orange"
-          ></v-checkbox>
+        <v-col cols="1" sm="1" md="1" lg="1" class="pr-md-0">
+          <div class="d-flex justify-center">
+            <v-checkbox
+              v-model="item.checkbox"
+              color="orange"
+              value="orange"
+            ></v-checkbox>
+          </div>
         </v-col>
         <!-- Img -->
-        <v-col cols="3" sm="2" md="2" lg="2">
+        <v-col cols="3" sm="2" md="2" lg="2" class="pl-md-0">
           <div class="cartitem__imgbox">
             <div class="cartitem__img"></div>
           </div>
         </v-col>
         <!-- Info -->
-        <v-col cols="8" sm="9" md="9" lg="7">
+        <v-col cols="8" sm="9" md="9" lg="6">
           <div class="cartitem__infobox">
             <div class="d-flex mb-1">
               <div class="cartitem__title text-caption text-lg-body-2 main">
@@ -57,19 +59,23 @@
             </div>
             <div class="d-flex flex-wrap mb-1">
               <div v-if="item.date" class="d-flex">
-                <svg-icon iconClass="schedule" className="schedule mx-1" />
+                <svg-icon iconClass="calendar" className="calendar mx-1" />
                 <div class="text-caption">{{ item.date }}</div>
               </div>
-              <div v-if="item.cart" class="d-flex">
-                <svg-icon iconClass="cart" className="cart mx-1" />
-                <div class="text-caption">個 x {{ item.cart }}</div>
+              <div v-if="item.time" class="d-flex">
+                <svg-icon iconClass="time" className="time mx-1" />
+                <div class="text-caption">{{ item.time }}</div>
+              </div>
+              <div v-if="item.shopping" class="d-flex">
+                <svg-icon iconClass="shopping" className="shopping mx-1" />
+                <div class="text-caption">個 x {{ item.shopping }}</div>
               </div>
               <div v-if="item.aldult" class="d-flex">
-                <svg-icon iconClass="cart" className="cart mx-1" />
+                <svg-icon iconClass="person" className="person mx-1" />
                 <div class="text-caption">成人 x {{ item.aldult }}</div>
               </div>
               <div v-if="item.car" class="d-flex">
-                <svg-icon iconClass="cart" className="cart mx-1" />
+                <svg-icon iconClass="car" className="car mx-1" />
                 <div class="text-caption">輛 x {{ item.car }}</div>
               </div>
             </div>
@@ -81,7 +87,14 @@
                   >
                     TWD
                   </div>
-                  <div class="cartitem__price text-subtitle-1 font-weight-bold">
+                  <div
+                    class="
+                      cartitem__price
+                      text-subtitle-1
+                      font-weight-bold
+                      ml-2
+                    "
+                  >
                     {{ item.price }}
                   </div>
                 </div>
@@ -91,13 +104,15 @@
           </div>
         </v-col>
         <!-- Price & Delete -->
-        <v-col cols="0" sm="0" md="0" lg="2" class="d-none d-lg-block">
-          <div class="cartitem__pricebox d-flex align-center">
+        <v-col cols="0" sm="0" md="0" lg="3" class="d-none d-lg-block">
+          <div class="cartitem__pricebox d-flex align-center justify-end">
             <div class="d-flex font-weight-bold">
               <div class="cartitem__currency text-subtitle-1 font-weight-bold">
                 TWD
               </div>
-              <div class="cartitem__price text-subtitle-1 font-weight-bold">
+              <div
+                class="cartitem__price text-subtitle-1 font-weight-bold ml-2"
+              >
                 {{ item.price }}
               </div>
             </div>
@@ -125,7 +140,8 @@ export default {
           receive: "桃園機場|第一航廈",
           return: "桃園機場|第二航廈",
           date: "2021-12-02",
-          cart: 1,
+          time: "",
+          shopping: 1,
           aldult: 0,
           car: 0,
           price: 1200,
@@ -141,7 +157,8 @@ export default {
           receive: "宅配",
           return: "宅配",
           date: "2021-12-02",
-          cart: 1,
+          time: "",
+          shopping: 1,
           aldult: 0,
           car: 0,
           price: 1200,
@@ -157,7 +174,8 @@ export default {
           receive: "",
           return: "",
           date: "2021-12-02",
-          cart: 1,
+          time: "8:00",
+          shopping: 0,
           aldult: 1,
           car: 1,
           price: 20000,
@@ -173,7 +191,8 @@ export default {
           receive: "",
           return: "",
           date: "2021-12-02",
-          cart: 1,
+          time: "8:00",
+          shopping: 0,
           aldult: 1,
           car: 1,
           price: 20000,
@@ -189,7 +208,7 @@ export default {
   .cartitem__imgbox {
     .cartitem__img {
       width: 100%;
-      height: 70px;
+      height: 64px;
       background: blueviolet;
       border-radius: 6px;
     }
@@ -220,7 +239,7 @@ export default {
   .cartitem__container {
     .cartitem__imgbox {
       .cartitem__img {
-        height: 50px;
+        height: 48px;
       }
     }
   }

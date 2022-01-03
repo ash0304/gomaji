@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="cartcard__continue d-flex justify-end">
-      <div>繼續購物 ></div>
+      <div style="color: #d2750a">繼續購物 ></div>
     </div>
   </div>
 </template>

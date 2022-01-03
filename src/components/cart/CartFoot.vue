@@ -19,18 +19,25 @@
       <v-col cols="12" lg="7">
         <div class="cartfoot__points pa-3">你將獲得額外 888 Gomaji Points</div>
         <div class="d-flex justify-end align-center pa-3 pr-0">
-          <div class="d-flex flex-column align-end">
+          <div class="cartfoot__pricedetail d-flex flex-column align-end">
             <div class="d-flex align-center">
               <div class="text-caption mr-1">3件商品合計</div>
-              <div class="font-weight-black text-body-1 mr-1">TWD</div>
+              <div
+                class="font-weight-black text-body-1 mr-1"
+                style="color: #444"
+              >
+                TWD
+              </div>
               <div class="cartfoot__price font-weight-black text-body-1">
                 22,400
               </div>
             </div>
             <div class="d-flex align-center">
               <div class="text-caption mr-1">Gomaji Points</div>
-              <svg-icon iconClass="fire" className="fire mr-1" />
-              <div class="font-weight-black text-body-1">983</div>
+              <svg-icon iconClass="gpoint" className="gpoint mr-1" />
+              <div class="cartfoot__point font-weight-black text-body-1">
+                983
+              </div>
             </div>
           </div>
           <div class="cartfoot__checkout py-3 px-6 ml-3">前往結帳</div>
@@ -54,12 +61,19 @@ export default {
   cursor: pointer;
 }
 .cartfoot__points {
-  background: rgb(112, 73, 0);
-  color: #ff8800;
+  background: #ffe4c5;
+  color: #d2750a;
 }
-.cartfoot__price {
-  color: #ff2d55;
+.cartfoot__pricedetail {
+  color: #6d6c6c;
+  .cartfoot__price {
+    color: #ff2d55;
+  }
+  .cartfoot__point {
+    color: #ff8800;
+  }
 }
+
 .cartfoot__checkout {
   background: #ff2d55;
   color: #fff;

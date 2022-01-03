@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+    <defs>
+        <style>
+            .cls-1{fill:#666}
+        </style>
+    </defs>
+    <g id="time-icon" transform="translate(-317.25 -357.568)">
+        <path id="Path_113" data-name="Path 113" class="cls-1" d="M322.25 357.568a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 9.7a4.7 4.7 0 1 1 4.7-4.7 4.7 4.7 0 0 1-4.7 4.697z"/>
+        <path id="Path_114" data-name="Path 114" class="cls-1" d="M325.557 359.724h-.307v4.012h2.92v-.307h-2.612z" transform="translate(-3.179 -.831)"/>
+    </g>
+</svg>
