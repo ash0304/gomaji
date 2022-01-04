@@ -41,7 +41,7 @@
         ></v-select>
       </v-col>
       <v-col cols="12" sm="12" md="12" lg="4" class="py-0">
-        <div class="text-body-2 mb-2">收件城市(不在列表中請選其他城市)</div>
+        <div class="text-body-2 mb-2">收件城市(不在列表請選其他城市)</div>
         <v-select
           :items="['', '']"
           placeholder="請選擇城市"

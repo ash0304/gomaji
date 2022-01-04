@@ -1,5 +1,17 @@
 <template>
   <div class="checkoutcard__page">
+    <div
+      class="
+        checkoutcard__fixbtn
+        d-flex
+        flex-column
+        align-center
+        justify-center
+      "
+    >
+      <div class="font-no-wrap">編輯</div>
+      <div class="font-no-wrap">名單</div>
+    </div>
     <!-- Breadcrumbs -->
     <div class="checkoutcard__breadcrumbs">
       <v-breadcrumbs :items="items" divider=">" class="pa-0 mb-3">
@@ -113,43 +125,11 @@
         <div id="h_discount" class="checkoutcard__scrolllabel text-h6 my-3">
           折價券折扣
         </div>
-        <div class="checkoutcard__discountarea pa-6">
-          <div class="text-h6 font-weight-black mb-3">使用折扣</div>
-          <div class="d-flex">
-            <div
-              v-if="!discount"
-              class="
-                checkoutcard__discountbtn
-                d-flex
-                align-center
-                justify-center
-              "
-            >
-              <svg-icon iconClass="coupon" className="coupon mr-2" />
-              <div>請選擇折價券</div>
-            </div>
-            <div
-              v-if="discount"
-              class="
-                checkoutcard__discountbtn
-                already
-                d-flex
-                align-center
-                justify-center
-              "
-            >
-              <svg-icon iconClass="whitecoupon" className="whitecoupon mr-2" />
-              <div>已折抵 TWD 20</div>
-            </div>
-            <div v-if="discount" class="checkoutcard__chancelbtn ml-3">
-              清除
-            </div>
-          </div>
-        </div>
+        <CouponDiscount />
       </div>
       <div id="points" style="width: 100%">
         <div id="h_points" class="checkoutcard__scrolllabel text-h6 my-3">
-          GOMAJO POINT 折抵
+          GOMAJI POINT 折抵
         </div>
         <div class="checkoutcard__pointarea pa-6">
           <v-row>
@@ -251,6 +231,7 @@ import RentcarInfo from "@/components/checkout/RentcarInfo";
 import PassengerInfo from "@/components/checkout/PassengerInfo";
 import ForeignShipInfo from "@/components/checkout/ForeignShipInfo";
 import ConnectMethod from "@/components/checkout/ConnectMethod";
+import CouponDiscount from "@/components/checkout/CouponDiscount";
 import OrderMemo from "@/components/checkout/OrderMemo";
 import PayMethod from "@/components/checkout/PayMethod";
 import EticketMail from "@/components/checkout/EticketMail";
@@ -272,6 +253,7 @@ export default {
     PassengerInfo,
     ForeignShipInfo,
     ConnectMethod,
+    CouponDiscount,
     OrderMemo,
     PayMethod,
     EticketMail,
@@ -281,9 +263,9 @@ export default {
   },
   data() {
     return {
-      discount: false,
       expansion: [0, 1, 2, 3, 4, 5, 6],
       textarea: "",
+      dialog: false,
       // breadcrumbs
       items: [
         {
@@ -512,8 +494,24 @@ export default {
 }
 
 .checkoutcard__page {
+  position: relative;
   width: 100%;
   margin: auto;
+  .checkoutcard__fixbtn {
+    position: fixed;
+    z-index: 100;
+    color: #ff8800;
+    background: #fff;
+    font-weight: bold;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    padding: 15px 18px;
+    box-shadow: 1px 4px 9px 0 rgba(0, 0, 0, 0.16);
+    bottom: 3%;
+    right: 1%;
+    cursor: pointer;
+  }
   .checkoutcard__breadcrumbs {
     width: 100%;
     margin: auto;
@@ -531,32 +529,7 @@ export default {
   .checkoutcard__scrolllabel {
     color: #666666;
   }
-  .checkoutcard__discountarea {
-    background: #fff;
-    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
-      0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
-    .checkoutcard__discountbtn {
-      border: 1px solid #ff8800;
-      color: #ff8800;
-      border-radius: 2px;
-      width: 160px;
-      padding: 8px 4px;
-      cursor: pointer;
-      &.already {
-        color: white;
-        background: #ff8800;
-      }
-    }
-    .checkoutcard__chancelbtn {
-      border: 1px solid #afafaf;
-      color: #afafaf;
-      border-radius: 2px;
-      width: 60px;
-      padding: 8px 4px;
-      cursor: pointer;
-      text-align: center;
-    }
-  }
+
   .checkoutcard__pointarea {
     background: #fff;
     box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
@@ -596,6 +569,11 @@ export default {
 @media screen and (min-width: 1264px) {
   .checkoutcard__page {
     width: 750px;
+    .checkoutcard__fixbtn {
+      right: 50%;
+      bottom: 30%;
+      transform: translate(calc(50% + 430px), 50%);
+    }
   }
 }
 </style>

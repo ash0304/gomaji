@@ -10,14 +10,15 @@
           </div>
         </template>
       </v-radio>
+      <div class="checkoutcard__divide my-3"></div>
       <v-radio value="Credit">
         <template v-slot:label>
           <div>
             <div class="d-flex align-center">
               <div>信用卡線上一次付清</div>
-              <svg-icon iconClass="fire" className="fire ml-2" />
-              <svg-icon iconClass="fire" className="fire ml-2" />
-              <svg-icon iconClass="fire" className="fire ml-2" />
+              <svg-icon iconClass="visa" className="visa ml-2" />
+              <svg-icon iconClass="mastercard" className="mastercard ml-2" />
+              <svg-icon iconClass="jcb" className="jcb ml-2" />
             </div>
           </div>
         </template>
@@ -61,4 +62,20 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.checkoutcard__divide {
+  border: 0.5px solid #aeaeae;
+}
+.visa {
+  width: 50px;
+  height: 16px;
+}
+.mastercard {
+  width: 27px;
+  height: 16px;
+}
+.jcb {
+  width: 23px;
+  height: 16px;
+}
+</style>
