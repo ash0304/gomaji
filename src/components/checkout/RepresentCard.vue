@@ -1,10 +1,10 @@
 <template>
   <div class="checkoutcard__representcard pa-3 pb-10">
-    <div class="d-flex justify-space-between">
+    <div class="d-flex justify-space-between mb-2">
       <div class="text-h6 font-weight-black">旅客代表人</div>
-      <div class="d-flex align-center">
-        <svg-icon iconClass="fire" className="fire" />
-        <div>清空</div>
+      <div class="checkoutcard__resetbtn d-flex align-center">
+        <svg-icon iconClass="reset" className="reset mr-2" />
+        <div style="color: #d2750a">清空</div>
       </div>
     </div>
     <!-- 內卡片第一行 -->
@@ -294,6 +294,18 @@ export default {
     border-radius: 2px;
     padding: 8px 16px;
   }
+  .checkoutcard__resetbtn {
+    cursor: pointer;
+    .reset {
+      width: 15px;
+      height: 15px;
+    }
+    &:hover {
+      .reset {
+        animation: reset 1s infinite ease-in;
+      }
+    }
+  }
 }
 .checkoutcard__count__box {
   width: 100%;
@@ -302,6 +314,24 @@ export default {
   }
   .checkoutcard__count__input {
     width: 100%;
+  }
+}
+
+@keyframes reset {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 </style>

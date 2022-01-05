@@ -35,8 +35,10 @@
       <div class="d-flex justify-space-between my-1">
         <div class="text-body-1 font-weight-black">訂單完成後回饋</div>
         <div class="text-body-1 font-weight-black">
-          <svg-icon iconClass="fire" className="fire" />
-          <span class="text-body-1 font-weight-black" style="color: #ff8800"
+          <svg-icon iconClass="gpoint" className="gpoint" />
+          <span
+            class="text-body-1 font-weight-black ml-2"
+            style="color: #ff8800"
             >983</span
           >
         </div>
