@@ -35,6 +35,11 @@ const routes = [
     name: "Edit",
     component: () => import("../views/Edit.vue"),
   },
+  {
+    path: "/history",
+    name: "History",
+    component: () => import("../views/History.vue"),
+  },
 ];
 
 const router = new VueRouter({
