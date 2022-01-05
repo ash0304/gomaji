@@ -30,6 +30,11 @@ const routes = [
     name: "CheckOut",
     component: () => import("../views/CheckOut.vue"),
   },
+  {
+    path: "/edit",
+    name: "Edit",
+    component: () => import("../views/Edit.vue"),
+  },
 ];
 
 const router = new VueRouter({

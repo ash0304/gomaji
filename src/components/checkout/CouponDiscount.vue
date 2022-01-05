@@ -269,6 +269,10 @@ export default {
   z-index: 1000;
 }
 
+::v-deep .v-slide-group__wrapper {
+  border-bottom: 1px solid #c3cace;
+}
+
 .active {
   color: #ff8800;
 }

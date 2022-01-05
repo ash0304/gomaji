@@ -8,6 +8,7 @@
         align-center
         justify-center
       "
+      @click="navigatorToEdit"
     >
       <div class="font-no-wrap">編輯</div>
       <div class="font-no-wrap">名單</div>
@@ -436,6 +437,11 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    navigatorToEdit() {
+      this.$router.push("/edit");
+    },
   },
 };
 </script>
