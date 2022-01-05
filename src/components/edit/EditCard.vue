@@ -555,9 +555,6 @@ export default {
     };
   },
   methods: {
-    test() {
-      console.log("123");
-    },
     addHander() {
       this.isAdd = true;
     },
