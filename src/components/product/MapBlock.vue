@@ -1,5 +1,5 @@
 <template>
-  <div class="map__block py-3">
+  <div class="map__block py-3" @click="changeMode('Map')">
     <div class="map__imgbox">
       <div class="map__img d-flex align-center justify-center">
         <svg-icon iconClass="redlocation" className="redlocation" />
@@ -11,6 +11,11 @@
 <script>
 export default {
   name: "MapBlock",
+  methods: {
+    changeMode(mode) {
+      this.$emit("changeMode", mode);
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

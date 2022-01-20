@@ -73,5 +73,9 @@ export default {
   .chips__result__number {
     color: #ff8800;
   }
+  .icon {
+    width: 14px;
+    height: 14px;
+  }
 }
 </style>

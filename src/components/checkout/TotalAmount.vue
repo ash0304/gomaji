@@ -11,7 +11,25 @@
         </div>
       </div>
       <div class="d-flex justify-space-between my-1">
-        <div class="text-body-1">折扣金額</div>
+        <div class="text-body-1">折價券折扣金額</div>
+        <div class="text-body-1 font-weight-black">
+          -TWD
+          <span class="text-body-1 font-weight-black" style="color: #ff2d55"
+            >100</span
+          >
+        </div>
+      </div>
+      <div class="d-flex justify-space-between my-1">
+        <div class="text-body-1">GOMAJI折扣金額</div>
+        <div class="text-body-1 font-weight-black">
+          -TWD
+          <span class="text-body-1 font-weight-black" style="color: #ff2d55"
+            >100</span
+          >
+        </div>
+      </div>
+      <div class="d-flex justify-space-between my-1">
+        <div class="text-body-1">購物金折扣金額</div>
         <div class="text-body-1 font-weight-black">
           -TWD
           <span class="text-body-1 font-weight-black" style="color: #ff2d55"
@@ -26,7 +44,7 @@
         <div class="text-body-1 font-weight-black">
           TWD
           <span class="text-body-1 font-weight-black" style="color: #ff2d55"
-            >22300</span
+            >22100</span
           >
         </div>
       </div>
@@ -62,7 +80,7 @@
                 TWD
               </div>
               <div class="checkoutcard__price font-weight-black text-body-1">
-                22,400
+                22100
               </div>
             </div>
             <div class="d-flex align-center">

@@ -2,9 +2,74 @@
   <div class="history__container py-3">
     <v-row>
       <!-- Img -->
-      <v-col cols="3" sm="2" md="2" lg="2">
+      <v-col cols="3" sm="2" md="2" lg="2" class="pr-0">
         <div class="history__imgbox">
           <div class="history__img"></div>
+        </div>
+        <div class="d-flex align-center justify-center mt-3">
+          <v-dialog
+            v-model="item.dialog"
+            :fullscreen="screenView"
+            :width="width"
+            transition="dialog-bottom-transition"
+            content-class="map__modal"
+          >
+            <template v-slot:activator="{ on, attrs }">
+              <div
+                class="
+                  history__judgebtn
+                  text-caption
+                  d-flex
+                  justify-center
+                  align-center
+                "
+                v-bind="attrs"
+                v-on="on"
+              >
+                <div>我要評論</div>
+              </div>
+            </template>
+            <!-- 彈窗內容 -->
+            <v-card>
+              <div class="d-flex justify-end pa-6">
+                <svg-icon
+                  iconClass="modalClose"
+                  className="modalClose"
+                  @click="item.dialog = false"
+                />
+              </div>
+              <div class="d-flex flex-column align-center pa-6">
+                <div>商品名稱</div>
+                <div class="font-weight-black my-3">首爾市區 | 機票 & 租車</div>
+                <div class="history__judgeimg my-6"></div>
+                <v-rating
+                  v-model="item.rating"
+                  background-color="#ff8800"
+                  color="#ff8800"
+                  dense
+                  hover
+                  half-increments
+                  length="5"
+                  :size="25"
+                ></v-rating>
+                <v-col cols="12" class="px-3 px-lg-12">
+                  <v-textarea
+                    v-model="item.textarea"
+                    outlined
+                    dense
+                    single-line
+                    placeholder="請輸入留言評價文字"
+                  ></v-textarea>
+                </v-col>
+                <div
+                  class="history__confirmbtn d-flex align-center justify-center"
+                  @click="item.dialog = false"
+                >
+                  <div>確認</div>
+                </div>
+              </div>
+            </v-card>
+          </v-dialog>
         </div>
       </v-col>
       <!-- Info -->
@@ -541,6 +606,41 @@ export default {
       item.isExpand = !item.isExpand;
     },
   },
+  computed: {
+    // 偵測視窗大小改變彈窗是否全版
+    screenView() {
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          return true;
+        case "sm":
+          return true;
+        case "md":
+          return true;
+        case "lg":
+          return false;
+        case "xl":
+          return false;
+        default:
+          return true;
+      }
+    },
+    width() {
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          return undefined;
+        case "sm":
+          return undefined;
+        case "md":
+          return undefined;
+        case "lg":
+          return 750;
+        case "xl":
+          return 750;
+        default:
+          return undefined;
+      }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -553,6 +653,14 @@ export default {
       background: blueviolet;
       border-radius: 6px;
     }
+  }
+  .history__judgebtn {
+    padding: 4px 8px;
+    background: #ff8800;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
   }
   .history__infobox {
     .main {
@@ -599,6 +707,28 @@ export default {
       }
     }
   }
+}
+
+.history__judgeimg {
+  width: 178px;
+  height: 120px;
+  background: purple;
+  border-radius: 4px;
+}
+.modalClose {
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+.history__confirmbtn {
+  background: #ff2d55;
+  color: #fff;
+  width: 150px;
+  height: 44px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 4px 12px;
 }
 
 @media screen and (max-width: 600px) {

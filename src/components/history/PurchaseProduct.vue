@@ -37,6 +37,9 @@ export default {
           price: 1200,
           isSeoul: false,
           isExpand: false,
+          dialog: false,
+          rating: 0,
+          textarea: "",
         },
         {
           id: 1,
@@ -56,6 +59,9 @@ export default {
           price: 1200,
           isSeoul: false,
           isExpand: false,
+          dialog: false,
+          rating: 0,
+          textarea: "",
         },
         {
           id: 2,
@@ -75,6 +81,9 @@ export default {
           price: 20000,
           isSeoul: true,
           isExpand: false,
+          dialog: false,
+          rating: 0,
+          textarea: "",
         },
       ],
     };

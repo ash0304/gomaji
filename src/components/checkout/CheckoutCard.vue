@@ -160,7 +160,40 @@
             </v-col>
           </v-row>
         </div>
-        <div></div>
+      </div>
+      <!-- 購物金折抵 -->
+      <div id="buypoints" style="width: 100%">
+        <div id="h_buypoints" class="checkoutcard__scrolllabel text-h6 my-3">
+          購物金折抵
+        </div>
+        <div class="checkoutcard__pointarea pa-6">
+          <v-row>
+            <v-col cols="12" sm="12" md="12" lg="6" class="py-0">
+              <div class="text-h6 font-weight-black mb-3">已折抵 TWD 100</div>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col cols="12" sm="12" md="12" lg="6" class="py-0">
+              <div class="d-flex">
+                <div class="checkoutcard__pointinput">
+                  <v-text-field
+                    outlined
+                    dense
+                    value="TWD 100"
+                    class="righted__input"
+                  >
+                  </v-text-field>
+                </div>
+                <div class="checkoutcard__selectall ml-3">全部使用</div>
+              </div>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col cols="12" sm="12" md="12" lg="6" class="py-0">
+              <div class="text-body-2 mb-3">可折抵點數 TWD 1,200</div>
+            </v-col>
+          </v-row>
+        </div>
       </div>
       <!-- 付款方式 -->
       <v-expansion-panel class="my-2" id="paymethod">
@@ -506,8 +539,8 @@ export default {
   .checkoutcard__fixbtn {
     position: fixed;
     z-index: 100;
-    color: #ff8800;
-    background: #fff;
+    color: #fff;
+    background: #ff8800;
     font-weight: bold;
     width: 70px;
     height: 70px;

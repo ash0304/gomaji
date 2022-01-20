@@ -206,23 +206,35 @@
         <div class="m__filter__resultnumber font-weight-black mr-1">3914</div>
         <div class="font-weight-black">項搜尋結果</div>
       </div>
-      <v-menu offset-y>
-        <template v-slot:activator="{ on, attrs }">
-          <div
-            class="d-flex align-center justify-center m__filter__sortbtn"
-            v-bind="attrs"
-            v-on="on"
-          >
-            <svg-icon iconClass="sort" className="icon mr-1" />
-            <div class="text-body-2">排序</div>
-          </div>
-        </template>
-        <v-list>
-          <v-list-item v-for="n in 5" :key="n">
-            <v-list-item-title>{{ `更多排序 ${n}` }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
+      <div class="d-flex align-center justify-center">
+        <v-menu offset-y>
+          <template v-slot:activator="{ on, attrs }">
+            <div
+              class="d-flex align-center justify-center m__filter__sortbtn"
+              v-bind="attrs"
+              v-on="on"
+            >
+              <svg-icon iconClass="sort" className="icon mr-1" />
+              <div class="text-body-2">排序</div>
+            </div>
+          </template>
+          <v-list>
+            <v-list-item v-for="n in 5" :key="n">
+              <v-list-item-title>{{ `更多排序 ${n}` }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+        <svg-icon
+          iconClass="listmode"
+          className="listmode ml-2 mr-1"
+          @click="changeMode('List')"
+        />
+        <svg-icon
+          iconClass="mapmode"
+          className="mapmode mx-1"
+          @click="changeMode('Map')"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -270,6 +282,9 @@ export default {
     };
   },
   methods: {
+    changeMode(mode) {
+      this.$emit("changeMode", mode);
+    },
     dragHandler() {
       this.isDragging = true;
       setTimeout(() => {
@@ -346,6 +361,10 @@ export default {
     padding: 2px 8px;
     border: 0.5px solid #333;
     border-radius: 6px;
+  }
+  .mapmode,
+  .listmode {
+    cursor: pointer;
   }
 }
 .icon {

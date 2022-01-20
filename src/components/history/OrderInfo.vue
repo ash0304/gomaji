@@ -27,6 +27,36 @@
         <div class="history__value">等待出貨</div>
       </v-col>
     </v-row>
+    <div class="history__divide my-4"></div>
+    <v-row>
+      <v-col cols="12" sm="12" md="12" lg="12">
+        <div
+          class="
+            d-flex
+            flex-column flex-lg-row
+            justify-space-around
+            align-center
+          "
+        >
+          <svg-icon iconClass="qrcode" className="qrcode my-3" />
+          <div class="d-flex flex-column align-center my-3">
+            <svg-icon iconClass="barcode" className="barcode" />
+            <div style="color: #333">ABC7991579899</div>
+          </div>
+          <div class="d-flex flex-column align-center my-3">
+            <div>憑證號</div>
+            <div>ABC7991579899</div>
+          </div>
+        </div>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12" sm="12" md="12" lg="12">
+        <div class="d-flex justify-center">
+          <div class="history__writeoff">自主核銷</div>
+        </div>
+      </v-col>
+    </v-row>
   </div>
 </template>
 <script>
@@ -42,6 +72,9 @@ export default {
     border-left: 3px solid #ff8800;
     color: #444444;
   }
+  .history__divide {
+    border: 1px dashed #afafaf;
+  }
   .history__label {
     color: #6d6c6c;
   }
@@ -50,6 +83,23 @@ export default {
   }
   .history__deadline {
     color: #ee7c76;
+  }
+  .qrcode {
+    width: 100px;
+    height: 100px;
+  }
+  .barcode {
+    width: 145px;
+    height: 43px;
+  }
+  .history__writeoff {
+    background: #ff8800;
+    border-radius: 4px;
+    color: #fff;
+    padding: 4px 8px;
+    cursor: pointer;
+    width: 104px;
+    text-align: center;
   }
 }
 </style>

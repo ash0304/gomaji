@@ -23,7 +23,7 @@
           </div>
         </template>
       </v-radio>
-      <div class="mt-3 pl-8">
+      <div v-if="radios === 'Credit'" class="mt-3 pl-8">
         <v-row>
           <v-col cols="12" sm="12" md="12" lg="4" class="py-0">
             <div class="text-body-2 mb-2">
@@ -49,6 +49,16 @@
           </v-col>
         </v-row>
       </div>
+      <div class="checkoutcard__divide my-3"></div>
+      <v-radio value="Travel">
+        <template v-slot:label>
+          <div>
+            <div class="d-flex align-center">
+              <div>使用國旅卡線上一次付清</div>
+            </div>
+          </div>
+        </template>
+      </v-radio>
     </v-radio-group>
   </div>
 </template>

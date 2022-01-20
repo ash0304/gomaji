@@ -27,13 +27,23 @@
             <SubCategory />
           </Frame>
           <Frame>
-            <MapBlock />
+            <MapBlock @changeMode="changeMode" />
           </Frame>
-          <MobileFilterBlock />
+          <Frame>
+            <ListModeBlock @changeMode="changeMode" />
+          </Frame>
+          <MobileFilterBlock @changeMode="changeMode" />
         </v-col>
-        <v-col cols="12" lg="9">
+        <v-col cols="12" lg="9" class="px-0 px-lg-3">
           <ChipsBlock />
-          <ProductBlock />
+          <!-- 自行判斷顯示 -->
+          <template v-if="searchMode === 'List'">
+            <CantFindBlock />
+            <ProductBlock />
+          </template>
+          <template v-else>
+            <MapGuideBlock />
+          </template>
         </v-col>
       </v-row>
     </v-container>
@@ -54,12 +64,15 @@ import BudgetRange from "@/components/product/BudgetRange";
 import JourneyTime from "@/components/product/JourneyTime";
 import SubCategory from "@/components/product/SubCategory";
 import MapBlock from "@/components/product/MapBlock";
+import ListModeBlock from "@/components/product/ListModeBlock";
 import MobileFilterBlock from "@/components/product/MobileFilterBlock";
 // Left(Mobile)
 
 // Right
 import ChipsBlock from "@/components/product/ChipsBlock";
 import ProductBlock from "@/components/product/ProductBlock";
+import MapGuideBlock from "@/components/product/MapGuideBlock";
+import CantFindBlock from "@/components/product/CantFindBlock";
 
 export default {
   name: "Product",
@@ -75,9 +88,23 @@ export default {
     JourneyTime,
     SubCategory,
     MapBlock,
+    ListModeBlock,
     MobileFilterBlock,
     ChipsBlock,
     ProductBlock,
+    MapGuideBlock,
+    CantFindBlock,
+  },
+  data() {
+    return {
+      // List or Map
+      searchMode: "List",
+    };
+  },
+  methods: {
+    changeMode(mode) {
+      this.searchMode = mode;
+    },
   },
 };
 </script>

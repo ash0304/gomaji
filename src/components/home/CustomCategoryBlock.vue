@@ -18,7 +18,10 @@
           <div v-for="item in customList" :key="item.id" class="custom__item">
             <div class="custom__shadowbox d-flex flex-column">
               <!-- img -->
-              <div class="custom__img" :style="styleObj(item)">
+              <div
+                class="custom__img d-flex flex-column justify-space-between"
+                :style="styleObj(item)"
+              >
                 <!-- tagarea -->
                 <div class="custom__tagarea d-flex justify-space-between">
                   <!-- tags -->
@@ -34,6 +37,12 @@
                       :iconClass="item.heartStatus"
                       :className="item.heartStatus"
                     />
+                  </div>
+                </div>
+                <div class="d-flex justify-end pb-3 pr-1">
+                  <svg-icon iconClass="timeicon" className="timeicon mr-1" />
+                  <div class="text-caption" style="color: #fff">
+                    13天16時07分50秒
                   </div>
                 </div>
               </div>

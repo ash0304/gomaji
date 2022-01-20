@@ -1,11 +1,24 @@
 <template>
   <div class="productinfo__container">
-    <div class="productinfo__name text-h5 mb-9">
-      澎湖水族館門票 | 單人門票&雙人優惠套票 | 電子票券
+    <div class="d-flex flex-column flex-lg-row justify-space-between mb-9">
+      <div class="productinfo__name text-h5">
+        澎湖水族館門票 | 單人門票&雙人優惠套票 | 電子票券
+      </div>
+      <div class="d-flex align-center justify-end">
+        <svg-icon iconClass="facebook" className="facebook mx-1" />
+        <svg-icon iconClass="line" className="line mx-1" />
+        <svg-icon iconClass="appicon" className="appicon mx-1" />
+        <svg-icon iconClass="link" className="link mx-1" />
+        <svg-icon iconClass="like" className="like mx-1" />
+      </div>
     </div>
     <div class="productinfo__location d-flex align-center justify-start">
       <svg-icon iconClass="location" className="location" />
       <div class="text-body-2 ml-2">台中 苗栗</div>
+      <div class="productinfo__limititem d-flex ml-2">
+        <svg-icon iconClass="timeicon" className="timeicon mr-1" />
+        <div class="text-caption">13天16時07分50秒</div>
+      </div>
     </div>
     <div class="d-flex d-lg-none align-end">
       <div class="text-caption mx-1">TWD</div>
@@ -143,11 +156,24 @@ export default {
   .productinfo__name {
     font-weight: bold;
   }
+  .facebook,
+  .line,
+  .appicon,
+  .link,
+  .like {
+    cursor: pointer;
+  }
   .productinfo__location {
     color: #6d6c6c;
     .location {
       width: 12px;
       height: 14px;
+    }
+    .productinfo__limititem {
+      background: #ff8800;
+      padding: 2px 4px;
+      border-radius: 4px;
+      color: #fff;
     }
   }
   .productinfo__price {

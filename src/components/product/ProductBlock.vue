@@ -20,6 +20,25 @@
               <svg-icon iconClass="noBgLove" className="noBgLove" />
             </v-col>
           </v-col>
+          <div
+            class="
+              product__limittime
+              d-flex
+              justify-space-between
+              align-center
+              mb-3
+              px-3
+            "
+          >
+            <div class="d-lg-none">約5公里</div>
+            <div
+              class="d-flex product__limititem"
+              :class="{ isMobile: screenView }"
+            >
+              <svg-icon iconClass="timeicon" className="timeicon mr-1" />
+              <div class="text-caption">13天16時07分50秒</div>
+            </div>
+          </div>
         </div>
         <!-- tags -->
       </v-col>
@@ -49,6 +68,10 @@
             </div>
             <div class="text-body-2 product__tick instant">熱賣中</div>
             <div class="text-body-2 product__tick instant">即時確認</div>
+            <div class="text-body-2 product__tick instant">國旅券適用</div>
+            <div class="text-body-2 product__tick instant">
+              壹貳參肆伍陸柒捌
+            </div>
           </v-col>
         </v-col>
         <!-- third -->
@@ -156,6 +179,25 @@
               <svg-icon iconClass="noBgLove" className="noBgLove" />
             </v-col>
           </v-col>
+          <div
+            class="
+              product__limittime
+              d-flex
+              justify-space-between
+              align-center
+              mb-3
+              px-3
+            "
+          >
+            <div class="d-lg-none">約5公里</div>
+            <div
+              class="d-flex product__limititem"
+              :class="{ isMobile: screenView }"
+            >
+              <svg-icon iconClass="timeicon" className="timeicon mr-1" />
+              <div class="text-caption">13天16時07分50秒</div>
+            </div>
+          </div>
         </div>
         <!-- tags -->
       </v-col>
@@ -185,6 +227,10 @@
             </div>
             <div class="text-body-2 product__tick instant">熱賣中</div>
             <div class="text-body-2 product__tick instant">即時確認</div>
+            <div class="text-body-2 product__tick instant">國旅券適用</div>
+            <div class="text-body-2 product__tick instant">
+              壹貳參肆伍陸柒捌
+            </div>
           </v-col>
         </v-col>
         <!-- third -->
@@ -379,6 +425,24 @@ export default {
       };
     },
   },
+  computed: {
+    screenView() {
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          return true;
+        case "sm":
+          return true;
+        case "md":
+          return true;
+        case "lg":
+          return false;
+        case "xl":
+          return false;
+        default:
+          return true;
+      }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -397,6 +461,7 @@ export default {
     }
     .product__left {
       .product__img {
+        position: relative;
         width: 100%;
         height: 100%;
         background: url("../../assets/home/recent10.png") no-repeat;
@@ -404,7 +469,30 @@ export default {
         background-position: center center;
         border-top-left-radius: 6px;
         border-bottom-left-radius: 6px;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          height: 20%;
+          width: 100%;
+          background: linear-gradient(transparent 10%, rgba(0, 0, 0, 0.85));
+        }
+        .product__limittime {
+          width: 100%;
+          position: absolute;
+          color: #fff;
+          left: 0;
+          bottom: 0;
+          .product__limititem {
+            &.isMobile {
+              background: #ff8800;
+              border-radius: 4px;
+              padding: 2px 4px;
+            }
+          }
+        }
       }
+
       .noBgLove {
         width: 20px;
         height: 20px;
@@ -486,6 +574,7 @@ export default {
         line-height: 22px;
         color: #fff;
         margin: 0px 2px;
+        border-radius: 4px;
         &.instant {
           background: #ff8800;
         }
@@ -503,7 +592,7 @@ export default {
         font-weight: 400;
         color: #fff;
         text-shadow: 0 1px 2px #e18d0e;
-        border-radius: 4px 4px 0 4px;
+        border-radius: 4px 4px 4px 4px;
         background: linear-gradient(45deg, #ffaf1e, #ffd56e);
       }
       .product__delprice {

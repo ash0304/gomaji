@@ -384,7 +384,7 @@ export default {
       font-weight: 400;
       color: #fff;
       text-shadow: 0 1px 2px #e18d0e;
-      border-radius: 4px 4px 0 4px;
+      border-radius: 4px 4px 4px 4px;
       background: linear-gradient(45deg, #ffaf1e, #ffd56e);
     }
     .planblocks__price {
