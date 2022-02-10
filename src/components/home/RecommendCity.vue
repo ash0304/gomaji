@@ -60,13 +60,13 @@ export default {
         width: auto;
         height: 18px;
         padding: 0;
-        margin: 13px;
+        margin: 13px 10px;
         color: #6d6c6c;
         cursor: pointer;
         &::before {
           content: "";
           position: absolute;
-          right: -13px;
+          right: -10px;
           top: 50%;
           transform: translateY(-50%);
           background: #707070;
@@ -88,13 +88,13 @@ export default {
         width: auto;
         height: 18px;
         padding: 0;
-        margin: 13px;
+        margin: 13px 10px;
         color: #6d6c6c;
         cursor: pointer;
         &::before {
           content: "";
           position: absolute;
-          right: -13px;
+          right: -10px;
           top: 50%;
           transform: translateY(-50%);
           background: #707070;

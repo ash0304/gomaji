@@ -55,4 +55,8 @@ export default {
   name: "PassenagerInfo",
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+::v-deep.v-text-field {
+  font-size: 14px;
+}
+</style>

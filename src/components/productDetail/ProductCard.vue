@@ -22,6 +22,7 @@
           class="pb-2"
           dense
           hover
+          readonly
           half-increments
           length="5"
           :size="18"

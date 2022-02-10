@@ -16,14 +16,18 @@
           <div class="passengerReviews__left d-flex align-center">
             <div class="passengerReviews__reviewpoint mr-2">4.5</div>
             <div>
-              <div class="d-flex mb-4">
-                <svg-icon iconClass="star" className="star" />
-                <svg-icon iconClass="star" className="star" />
-                <svg-icon iconClass="star" className="star" />
-                <svg-icon iconClass="star" className="star" />
-                <svg-icon iconClass="halfstar" className="halfstar" />
-              </div>
-              <div>75 則旅客評價</div>
+              <v-rating
+                v-model="rating"
+                background-color="#ff8800"
+                color="#ff8800"
+                dense
+                hover
+                readonly
+                half-increments
+                length="5"
+                :size="25"
+              ></v-rating>
+              <div class="ml-2 mt-4">75 則旅客評價</div>
             </div>
           </div>
           <div class="passengerReviews__right d-none d-lg-block">
@@ -89,13 +93,19 @@
             <div class="passengerReviews__avatar mr-3"></div>
             <div>
               <div class="text-body-2 mb-1">chiayun</div>
-              <div class="d-flex">
-                <svg-icon iconClass="star" className="star" />
-                <svg-icon iconClass="star" className="star" />
-                <svg-icon iconClass="star" className="star" />
-                <svg-icon iconClass="star" className="star" />
-                <svg-icon iconClass="halfstar" className="halfstar" />
-                <div class="text-body-2 ml-2">2021/11/19．家人</div>
+              <div class="d-flex align-center">
+                <v-rating
+                  v-model="rating"
+                  background-color="#ff8800"
+                  color="#ff8800"
+                  dense
+                  hover
+                  readonly
+                  half-increments
+                  length="5"
+                  :size="20"
+                ></v-rating>
+                <div class="text-body-2 mt-1 ml-2">2021/11/19．家人</div>
               </div>
             </div>
           </div>
@@ -135,6 +145,7 @@ export default {
     return {
       page: 1,
       isReviews: false,
+      rating: 3.5,
     };
   },
   methods: {

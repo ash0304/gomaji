@@ -159,7 +159,7 @@
           旅客身高 <span style="color: #ee7c76">*</span>
         </div>
         <div class="checkoutcard__count__box d-flex">
-          <div class="checkoutcard__count__input">
+          <div class="checkoutcard__count__input mr-2">
             <v-text-field outlined dense> </v-text-field>
           </div>
           <div class="checkoutcard__count__code">
@@ -177,7 +177,7 @@
           旅客體重 <span style="color: #ee7c76">*</span>
         </div>
         <div class="checkoutcard__count__box d-flex">
-          <div class="checkoutcard__count__input">
+          <div class="checkoutcard__count__input mr-2">
             <v-text-field outlined dense> </v-text-field>
           </div>
           <div class="checkoutcard__count__code">
@@ -198,7 +198,7 @@
           旅客鞋碼 <span style="color: #ee7c76">*</span>
         </div>
         <div class="checkoutcard__count__box d-flex">
-          <div class="checkoutcard__count__input">
+          <div class="checkoutcard__count__input mr-2">
             <v-select
               :items="['成人男性', '成人女性']"
               placeholder="請選擇"
@@ -207,7 +207,7 @@
               dense
             ></v-select>
           </div>
-          <div class="checkoutcard__count__code">
+          <div class="checkoutcard__count__code mr-2">
             <v-select
               :items="['cm']"
               outlined
@@ -286,6 +286,10 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+::v-deep.v-text-field {
+  font-size: 14px;
+}
+
 .checkoutcard__representcard {
   box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.16);
   .checkoutcard__addtraveler {

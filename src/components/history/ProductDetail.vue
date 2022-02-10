@@ -76,45 +76,45 @@
       <v-col cols="9" sm="10" md="10" lg="7">
         <div class="history__infobox">
           <div class="d-flex mb-1">
-            <div class="text-sm-body-1 text-caption main text-no-wrap mr-1">
+            <div class="text-sm-body-2 text-caption main text-no-wrap mr-1">
               名稱
             </div>
-            <span class="history__bold text-sm-body-1 text-caption">
+            <span class="history__bold text-sm-body-2 text-caption">
               {{ item.name }}
             </span>
           </div>
           <div class="d-flex mb-1">
-            <div class="text-sm-body-1 text-caption main text-no-wrap mr-1">
+            <div class="text-sm-body-2 text-caption main text-no-wrap mr-1">
               方案
             </div>
-            <span class="history__bold text-sm-body-1 text-caption">
+            <span class="history__bold text-sm-body-2 text-caption">
               {{ item.plan }}
             </span>
           </div>
           <div class="d-flex flex-wrap mb-1">
             <div v-if="item.date" class="d-flex align-start">
               <svg-icon iconClass="calendar" className="calendar mx-1" />
-              <div class="text-sm-body-1 text-caption">{{ item.date }}</div>
+              <div class="text-sm-body-2 text-caption">{{ item.date }}</div>
             </div>
             <div v-if="item.time" class="d-flex align-start">
               <svg-icon iconClass="time" className="time mx-1" />
-              <div class="text-sm-body-1 text-caption">{{ item.time }}</div>
+              <div class="text-sm-body-2 text-caption">{{ item.time }}</div>
             </div>
             <div v-if="item.shopping" class="d-flex align-start">
               <svg-icon iconClass="shopping" className="shopping mx-1" />
-              <div class="text-sm-body-1 text-caption">
+              <div class="text-sm-body-2 text-caption">
                 個 x {{ item.shopping }}
               </div>
             </div>
             <div v-if="item.aldult" class="d-flex align-start">
               <svg-icon iconClass="person" className="person mx-1" />
-              <div class="text-sm-body-1 text-caption">
+              <div class="text-sm-body-2 text-caption">
                 成人 x {{ item.aldult }}
               </div>
             </div>
             <div v-if="item.car" class="d-flex align-start">
               <svg-icon iconClass="car" className="car mx-1" />
-              <div class="text-sm-body-1 text-caption">輛 x {{ item.car }}</div>
+              <div class="text-sm-body-2 text-caption">輛 x {{ item.car }}</div>
             </div>
           </div>
           <div class="d-flex justify-space-between">
@@ -122,7 +122,7 @@
               class="history__expandbtn d-flex align-center"
               @click="expandHandler(item)"
             >
-              <div class="text-body-1 font-weight-black">商品明細</div>
+              <div class="text-body-2 font-weight-black">商品明細</div>
               <svg-icon iconClass="downarrow" className="downarrow mx-3" />
             </div>
             <div class="history__pricebox d-flex d-lg-none align-center">

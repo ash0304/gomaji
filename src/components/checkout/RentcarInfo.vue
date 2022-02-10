@@ -190,6 +190,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+::v-deep.v-text-field {
+  font-size: 14px;
+}
+::v-deep label {
+  font-size: 14px;
+}
 .checkoutcard__time__box {
   width: 100%;
   .checkoutcard__time__code {

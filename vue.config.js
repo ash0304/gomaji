@@ -8,6 +8,15 @@ function resolve(dir) {
 module.exports = {
   transpileDependencies: ["vuetify", "vue-tel-input-vuetify"],
   chainWebpack(config) {
+    ["vue-modules", "vue", "normal-modules", "normal"].forEach((match) => {
+      config.module
+        .rule("scss")
+        .oneOf(match)
+        .use("sass-loader")
+        .tap((opt) =>
+          Object.assign(opt, { additionalData: `@import '@/styles/variables.scss'; ` })
+        );
+    });
     // set svg-sprite-loader
     config.module.rule("svg").exclude.add(resolve("src/icons")).end();
     config.module

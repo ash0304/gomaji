@@ -162,6 +162,7 @@ export default {
   margin: auto;
   .history__main {
     text-align: center;
+    /* font-family: "NotoSansTC-Medium"; */
   }
   .history__backbtn {
     color: #fff;

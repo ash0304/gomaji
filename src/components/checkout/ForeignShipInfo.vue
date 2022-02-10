@@ -30,7 +30,7 @@
           收件人電話 <span style="color: #ee7c76">*</span>
         </div>
         <div class="checkoutcard__tel__box d-flex">
-          <div class="checkoutcard__tel__code">
+          <div class="checkoutcard__tel__code mr-2">
             <v-select :items="['+886']" value="+886" outlined dense></v-select>
           </div>
           <div class="checkoutcard__tel__input">
@@ -203,6 +203,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+::v-deep.v-text-field {
+  font-size: 14px;
+}
 .checkoutcard__tel__box {
   width: 100%;
   .checkoutcard__tel__code {

@@ -39,6 +39,7 @@
                   background-color="#ff8800"
                   color="#ff8800"
                   dense
+                  readonly
                   hover
                   half-increments
                   length="5"

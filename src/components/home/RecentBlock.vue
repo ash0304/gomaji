@@ -40,10 +40,10 @@
                         <svg-icon iconClass="bigticket" className="bigticket" />
                       </div>
                       <div class="icon__back">
-                        <svg-icon
+                        <!-- <svg-icon
                           iconClass="bigticket_b"
                           className="bigticket_b"
-                        />
+                        /> -->
                       </div>
                     </div>
                     {{ item.title }}
@@ -66,11 +66,16 @@
                       color="#ff8800"
                       dense
                       hover
+                      readonly
                       half-increments
                       length="5"
                       :size="18"
                     ></v-rating>
-                    <div>({{ item.rating }})</div>
+                    <span
+                      class="ml-2"
+                      style="color: #6d6c6c; font-size: 16px; font-weight: 500"
+                      >({{ item.rating }})</span
+                    >
                   </div>
                   <!-- price -->
                   <div class="recent__pricebox">
@@ -319,7 +324,7 @@ export default {
               .icon__flipbox {
                 .icon__front {
                   z-index: 9;
-                  transform: rotateY(360deg);
+                  transform: rotateY(720deg);
                 }
                 .icon__back {
                   z-index: 10;

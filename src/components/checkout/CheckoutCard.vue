@@ -25,12 +25,14 @@
         </template>
       </v-breadcrumbs>
     </div>
-    <div>購物明細</div>
+    <div style="font-size: 18px; color: #666666">購物明細</div>
     <v-expansion-panels v-model="expansion" multiple>
       <!-- 訂購人資料 -->
       <v-expansion-panel class="my-2" id="orderinfo">
         <v-expansion-panel-header :color="'orange'">
-          <div class="checkoutcard__panelhead" id="h_orderinfo">訂購人資料</div>
+          <div class="checkoutcard__panelhead my-2" id="h_orderinfo">
+            訂購人資料
+          </div>
           <template v-slot:actions>
             <v-icon color="white"> $expand </v-icon>
           </template>
@@ -42,7 +44,9 @@
       <!-- WIFI分享器 -->
       <v-expansion-panel class="my-2" id="caseA">
         <v-expansion-panel-header :color="'orange'">
-          <div class="checkoutcard__panelhead" id="h_caseA">WIFI分享器</div>
+          <div class="checkoutcard__panelhead my-2" id="h_caseA">
+            WIFI分享器
+          </div>
           <template v-slot:actions>
             <v-icon color="white"> $expand </v-icon>
           </template>
@@ -66,7 +70,9 @@
       <!-- 全旅包車自由行 -->
       <v-expansion-panel class="my-2" id="caseB">
         <v-expansion-panel-header :color="'orange'">
-          <div class="checkoutcard__panelhead" id="h_caseB">全旅包車自由行</div>
+          <div class="checkoutcard__panelhead my-2" id="h_caseB">
+            全旅包車自由行
+          </div>
           <template v-slot:actions>
             <v-icon color="white"> $expand </v-icon>
           </template>
@@ -122,20 +128,31 @@
           <OrderMemo />
         </v-expansion-panel-content>
       </v-expansion-panel>
-      <div id="discount" style="width: 100%">
-        <div id="h_discount" class="checkoutcard__scrolllabel text-h6 my-3">
-          折價券折扣
-        </div>
-        <CouponDiscount />
-      </div>
       <div id="points" style="width: 100%">
         <div id="h_points" class="checkoutcard__scrolllabel text-h6 my-3">
-          GOMAJI POINT 折抵
+          折扣
         </div>
         <div class="checkoutcard__pointarea pa-6">
+          <!-- 使用折扣 -->
+          <div
+            id="h_discount"
+            class="checkoutcard__label text-h7 font-weight-black my-4 pl-2"
+          >
+            使用折扣
+          </div>
+          <CouponDiscount />
+          <!-- Gomaji 折抵 -->
+          <div class="checkoutcard__label text-h7 font-weight-black my-6 pl-2">
+            GOMAJI POINT 折抵
+          </div>
           <v-row>
             <v-col cols="12" sm="12" md="12" lg="6" class="py-0">
-              <div class="text-h6 font-weight-black mb-3">已折抵 TWD 100</div>
+              <div
+                class="text-h7 font-weight-black mb-3"
+                style="color: #6d6c6c"
+              >
+                已折抵 TWD 100
+              </div>
             </v-col>
           </v-row>
           <v-row>
@@ -159,17 +176,22 @@
               <div class="text-body-2 mb-3">可折抵點數 TWD 1,200</div>
             </v-col>
           </v-row>
-        </div>
-      </div>
-      <!-- 購物金折抵 -->
-      <div id="buypoints" style="width: 100%">
-        <div id="h_buypoints" class="checkoutcard__scrolllabel text-h6 my-3">
-          購物金折抵
-        </div>
-        <div class="checkoutcard__pointarea pa-6">
+          <!-- 購物金折抵 -->
+          <div
+            id="h_buypoints"
+            class="checkoutcard__label text-h7 font-weight-black my-6 pl-2"
+          >
+            購物金折抵
+          </div>
           <v-row>
             <v-col cols="12" sm="12" md="12" lg="6" class="py-0">
-              <div class="text-h6 font-weight-black mb-3">已折抵 TWD 100</div>
+              <div
+                class="text-h7 font-weight-black mb-3"
+                style="color: #6d6c6c"
+                id="buypoints"
+              >
+                已折抵 TWD 100
+              </div>
             </v-col>
           </v-row>
           <v-row>
@@ -196,9 +218,11 @@
         </div>
       </div>
       <!-- 付款方式 -->
-      <v-expansion-panel class="my-2" id="paymethod">
+      <v-expansion-panel class="my-4" id="paymethod">
         <v-expansion-panel-header :color="'orange'">
-          <div class="checkoutcard__panelhead" id="h_paymethod">付款方式</div>
+          <div class="checkoutcard__panelhead my-2" id="h_paymethod">
+            付款方式
+          </div>
           <template v-slot:actions>
             <v-icon color="white"> $expand </v-icon>
           </template>
@@ -210,7 +234,7 @@
       <!-- 電子票取貨Email -->
       <v-expansion-panel class="my-2">
         <v-expansion-panel-header :color="'orange'">
-          <div class="checkoutcard__panelhead" id="h_paymethod">
+          <div class="checkoutcard__panelhead my-2" id="h_paymethod">
             電子票取貨Email
           </div>
           <template v-slot:actions>
@@ -224,7 +248,9 @@
       <!-- 發票資訊 -->
       <v-expansion-panel class="my-2">
         <v-expansion-panel-header :color="'orange'">
-          <div class="checkoutcard__panelhead" id="h_paymethod">發票資訊</div>
+          <div class="checkoutcard__panelhead my-2" id="h_paymethod">
+            發票資訊
+          </div>
           <template v-slot:actions>
             <v-icon color="white"> $expand </v-icon>
           </template>
@@ -236,7 +262,9 @@
       <!-- 付款明細 -->
       <v-expansion-panel class="my-2" id="paydetail">
         <v-expansion-panel-header :color="'orange'">
-          <div class="checkoutcard__panelhead" id="h_paydetail">付款明細</div>
+          <div class="checkoutcard__panelhead my-2" id="h_paydetail">
+            付款明細
+          </div>
           <template v-slot:actions>
             <v-icon color="white"> $expand </v-icon>
           </template>
@@ -558,6 +586,7 @@ export default {
   .checkoutcard__panelhead {
     color: #fff;
     font-weight: bold;
+    font-size: 18px;
   }
   .checkountcard__hint {
     color: #c3cace;

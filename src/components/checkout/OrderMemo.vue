@@ -25,4 +25,8 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+::v-deep textarea {
+  font-size: 14px;
+}
+</style>

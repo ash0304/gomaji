@@ -1,6 +1,6 @@
 <template>
   <div class="frame__block px-3 my-4 d-none d-lg-block">
-    <h4 v-if="title" class="pt-3">{{ title }}</h4>
+    <div v-if="title" class="title pt-3">{{ title }}</div>
     <slot></slot>
   </div>
 </template>
@@ -18,5 +18,9 @@ export default {
 .frame__block {
   background: #fff;
   border-radius: 6px;
+  .title {
+    font-family: "NotoSansTC-Bold";
+    font-weight: bold;
+  }
 }
 </style>

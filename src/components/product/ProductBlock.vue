@@ -17,7 +17,7 @@
               <div class="text-body-2 product__tick art">藝fun券適用</div>
             </v-col>
             <v-col cols="2" class="d-flex justify-end d-lg-none">
-              <svg-icon iconClass="noBgLove" className="noBgLove" />
+              <svg-icon iconClass="wlineheart" className="wlineheart" />
             </v-col>
           </v-col>
           <div
@@ -36,7 +36,7 @@
               :class="{ isMobile: screenView }"
             >
               <svg-icon iconClass="timeicon" className="timeicon mr-1" />
-              <div class="text-caption">13天16時07分50秒</div>
+              <div class="">13天16時07分50秒</div>
             </div>
           </div>
         </div>
@@ -86,18 +86,20 @@
         <v-col cols="12" class="d-flex pa-0 mb-2 mb-lg-0">
           <v-col cols="12" class="d-flex align-center pa-0">
             <svg-icon iconClass="location" className="location mr-1" />
-            <div class="text-caption mr-2">{{ item.location }}</div>
+            <div class="mr-2" style="font-size: 12px">{{ item.location }}</div>
             <svg-icon iconClass="schedule" className="schedule mr-1" />
-            <div class="text-caption">最早可預訂日: {{ item.date }}</div>
+            <div style="font-size: 12px">最早可預訂日: {{ item.date }}</div>
           </v-col>
         </v-col>
         <!-- fifth -->
         <v-col cols="12" class="d-flex pa-0">
           <v-col cols="12" class="d-flex d-lg-none align-end pa-0">
             <svg-icon className="star pb-1" iconClass="star" />
-            <div class="text-caption ml-2">(75)</div>
+            <div class="ml-2" style="font-size: 14px">(75)</div>
             <svg-icon iconClass="fire" className="fire ml-3 pb-1" />
-            <div class="text-caption ml-1">500+個已訂購</div>
+            <div class="ml-1" style="font-size: 12px; color: #6d6c6c">
+              500+個已訂購
+            </div>
           </v-col>
         </v-col>
         <!-- sixth -->
@@ -120,13 +122,14 @@
               color="#ff8800"
               dense
               hover
+              readonly
               half-increments
               length="5"
               :size="18"
             ></v-rating>
-            <div class="text-caption ml-2">(75)</div>
+            <div class="ml-2" style="font-size: 14px">(75)</div>
             <svg-icon iconClass="fire" className="fire ml-3 pb-1" />
-            <div class="text-caption ml-1">500+個已訂購</div>
+            <div class="ml-1" style="font-size: 12px">500+個已訂購</div>
           </v-col>
           <v-col cols="12" lg="5" class="d-flex justify-end pa-0 text-body-2">
             <div v-if="!item.isSold" class="text-button product__delprice">
@@ -176,7 +179,7 @@
               <div class="text-body-2 product__tick art">藝fun券適用</div>
             </v-col>
             <v-col cols="2" class="d-flex justify-end d-lg-none">
-              <svg-icon iconClass="noBgLove" className="noBgLove" />
+              <svg-icon iconClass="wlineheart" className="wlineheart" />
             </v-col>
           </v-col>
           <div
@@ -195,7 +198,7 @@
               :class="{ isMobile: screenView }"
             >
               <svg-icon iconClass="timeicon" className="timeicon mr-1" />
-              <div class="text-caption">13天16時07分50秒</div>
+              <div style="font-size: 12px">13天16時07分50秒</div>
             </div>
           </div>
         </div>
@@ -245,18 +248,18 @@
         <v-col cols="12" class="d-flex pa-0 mb-2 mb-lg-0">
           <v-col cols="12" class="d-flex align-center pa-0">
             <svg-icon iconClass="location" className="location mr-1" />
-            <div class="text-caption mr-2">{{ item.location }}</div>
+            <div class="mr-2" style="font-size: 12px">{{ item.location }}</div>
             <svg-icon iconClass="schedule" className="schedule mr-1" />
-            <div class="text-caption">最早可預訂日: {{ item.date }}</div>
+            <div style="font-size: 12px">最早可預訂日: {{ item.date }}</div>
           </v-col>
         </v-col>
         <!-- fifth -->
         <v-col cols="12" class="d-flex pa-0">
           <v-col cols="12" class="d-flex d-lg-none align-end pa-0">
             <svg-icon className="star pb-1" iconClass="star" />
-            <div class="text-caption ml-2">(75)</div>
+            <div class="ml-2" style="font-size: 14px">(75)</div>
             <svg-icon iconClass="fire" className="fire ml-3 pb-1" />
-            <div class="text-caption ml-1">500+個已訂購</div>
+            <div class="ml-1" style="font-size: 12px">500+個已訂購</div>
           </v-col>
         </v-col>
         <!-- sixth -->
@@ -279,13 +282,14 @@
               color="#ff8800"
               dense
               hover
+              readonly
               half-increments
               length="5"
               :size="18"
             ></v-rating>
-            <div class="text-caption ml-2">(75)</div>
+            <div class="ml-2" style="font-size: 14px">(75)</div>
             <svg-icon iconClass="fire" className="fire ml-3 pb-1" />
-            <div class="text-caption ml-1">500+個已訂購</div>
+            <div class="ml-1" style="font-size: 12px">500+個已訂購</div>
           </v-col>
           <v-col cols="12" lg="5" class="d-flex justify-end pa-0 text-body-2">
             <div v-if="!item.isSold" class="text-button product__delprice">
@@ -497,6 +501,10 @@ export default {
         width: 20px;
         height: 20px;
       }
+      .wlineheart {
+        width: 20px;
+        height: 20px;
+      }
       .love_full {
         width: 35px;
         height: 35px;
@@ -588,12 +596,11 @@ export default {
       .product__discountbtn {
         height: 23px;
         line-height: 23px;
-        padding: 1px 4px;
-        font-weight: 400;
+        padding: 2px 6px;
+        font-weight: 500;
         color: #fff;
-        text-shadow: 0 1px 2px #e18d0e;
         border-radius: 4px 4px 4px 4px;
-        background: linear-gradient(45deg, #ffaf1e, #ffd56e);
+        background: #ff8800;
       }
       .product__delprice {
         text-decoration: line-through;

@@ -104,7 +104,7 @@
                 收件人電話 <span style="color: #ee7c76">*</span>
               </div>
               <div class="edit__tel__box d-flex">
-                <div class="edit__tel__code">
+                <div class="edit__tel__code mr-2">
                   <v-select
                     :items="['+886']"
                     value="+886"
@@ -275,7 +275,7 @@
                       收件人電話 <span style="color: #ee7c76">*</span>
                     </div>
                     <div class="edit__tel__box d-flex">
-                      <div class="edit__tel__code">
+                      <div class="edit__tel__code mr-2">
                         <v-select
                           :items="['+886']"
                           value="+886"
@@ -470,7 +470,7 @@
                       收件人電話 <span style="color: #ee7c76">*</span>
                     </div>
                     <div class="edit__tel__box d-flex">
-                      <div class="edit__tel__code">
+                      <div class="edit__tel__code mr-2">
                         <v-select
                           :items="['+886']"
                           value="+886"
@@ -573,6 +573,10 @@ export default {
 <style lang="scss" scoped>
 ::v-deep .v-slide-group__wrapper {
   border-bottom: 1px solid #c3cace;
+}
+
+::v-deep.v-text-field {
+  font-size: 14px;
 }
 
 .edit__page {

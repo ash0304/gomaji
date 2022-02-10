@@ -1,7 +1,6 @@
 <template>
-  <div class="checkoutcard__discountarea pa-6">
-    <div class="text-h6 font-weight-black mb-3">使用折扣</div>
-    <div class="d-flex">
+  <div class="checkoutcard__discountarea">
+    <div id="discount" class="d-flex">
       <template>
         <v-dialog
           v-model="dialog"
@@ -279,8 +278,6 @@ export default {
 
 .checkoutcard__discountarea {
   background: #fff;
-  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
-    0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
   .checkoutcard__discountbtn {
     border: 1px solid #ff8800;
     color: #ff8800;

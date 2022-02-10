@@ -17,7 +17,7 @@
           <Frame>
             <TourLanguage />
           </Frame>
-          <Frame :title="'價錢(TWD)'">
+          <Frame :title="'價錢 (TWD)'">
             <BudgetRange />
           </Frame>
           <Frame>

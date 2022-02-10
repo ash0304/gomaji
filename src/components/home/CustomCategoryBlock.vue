@@ -41,7 +41,7 @@
                 </div>
                 <div class="d-flex justify-end pb-3 pr-1">
                   <svg-icon iconClass="timeicon" className="timeicon mr-1" />
-                  <div class="text-caption" style="color: #fff">
+                  <div style="color: #fff; font-size: 12px">
                     13天16時07分50秒
                   </div>
                 </div>
@@ -60,10 +60,7 @@
                       <svg-icon iconClass="bigticket" className="bigticket" />
                     </div>
                     <div class="icon__back">
-                      <svg-icon
-                        iconClass="bigticket_b"
-                        className="bigticket_b"
-                      />
+                      <!-- <svg-icon iconClass="bigticket" className="bigticket" /> -->
                     </div>
                   </div>
                   {{ item.title }}
@@ -80,8 +77,16 @@
                       align-center
                     "
                   >
-                    <svg-icon iconClass="plus" className="plus" />
-                    <span> 300+個已訂購 </span>
+                    <svg-icon iconClass="fire" className="fire mr-2 mb-1" />
+                    <span
+                      style="
+                        color: #6d6c6c;
+                        font-size: 0.6rem;
+                        font-weight: 800;
+                      "
+                    >
+                      300+ 個已訂購
+                    </span>
                   </div>
                 </div>
                 <!-- info -->
@@ -90,7 +95,7 @@
                 >
                   <div class="custom__location">
                     <svg-icon iconClass="location" className="location" />
-                    <span>台灣 苗栗</span>
+                    <span style="font-weight: 800">台灣 苗栗</span>
                   </div>
                   <div class="custom__delprice">TWD 500</div>
                 </div>
@@ -106,11 +111,16 @@
                       color="#ff8800"
                       dense
                       hover
+                      readonly
                       half-increments
                       length="5"
                       :size="18"
                     ></v-rating>
-                    <div>({{ item.rating }})</div>
+                    <span
+                      class="ml-2"
+                      style="color: #6d6c6c; font-size: 16px; font-weight: 500"
+                      >({{ item.rating }})</span
+                    >
                   </div>
                   <!-- price -->
                   <div class="custom__pricebox">
@@ -238,7 +248,6 @@ export default {
       position: relative;
       height: 320px;
       border-radius: 6px;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
       .custom__img {
         width: 100%;
         height: 55%;
@@ -318,6 +327,8 @@ export default {
         border-bottom-right-radius: 6px;
         border-bottom-left-radius: 6px;
         padding: 8px;
+        border: 0.5px solid rgba(112, 112, 112, 0.3);
+        border-top: none;
         .custom__title {
           height: 40%;
           color: #333;
@@ -374,6 +385,8 @@ export default {
           .custom__status__item {
             padding: 1px 9px;
             margin-right: 8px;
+            border-radius: 4px;
+            font-weight: 800;
             &.hot {
               background: #ffdbdd;
               color: #f80606;
@@ -385,7 +398,7 @@ export default {
           }
           .custom__status__count {
             color: #6d6c6c;
-            .plus {
+            .fire {
               width: 13px;
               height: 13px;
             }
@@ -441,7 +454,7 @@ export default {
             .icon__flipbox {
               .icon__front {
                 z-index: 9;
-                transform: rotateY(360deg);
+                transform: rotateY(720deg);
               }
               .icon__back {
                 z-index: 10;
