@@ -6,6 +6,7 @@ function resolve(dir) {
 }
 
 module.exports = {
+  pubilcPath: '/gomaji',
   transpileDependencies: ["vuetify", "vue-tel-input-vuetify"],
   chainWebpack(config) {
     ["vue-modules", "vue", "normal-modules", "normal"].forEach((match) => {

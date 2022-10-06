@@ -2,7 +2,7 @@
   "name": "gomaji",
   "homepage": "https://ash0304.github.io/gomaji",
   "version": "0.1.0",
-  "private": true,
+  "author": "Ash",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
