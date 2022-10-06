@@ -91,7 +91,7 @@
               </div>
             </div>
           </div>
-          <div class="checkoutcard__checkout py-3 px-6 ml-3">前往結帳</div>
+          <div class="checkoutcard__checkout py-3 px-6 ml-3" @click="goHistory()">前往結帳</div>
         </div>
       </v-col>
     </v-row>
@@ -100,6 +100,11 @@
 <script>
 export default {
   name: "TotalAmount",
+  methods: {
+    goHistory() {
+      this.$router.push({ name: 'History' })
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

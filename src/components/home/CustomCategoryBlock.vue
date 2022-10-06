@@ -15,7 +15,7 @@
         >
           <!-- prev -->
           <Prev slot="prev" />
-          <div v-for="item in customList" :key="item.id" class="custom__item">
+          <div v-for="item in customList" :key="item.id" class="custom__item" @click="goToProduct()">
             <div class="custom__shadowbox d-flex flex-column">
               <!-- img -->
               <div
@@ -235,6 +235,9 @@ export default {
         "background-position": "center center",
       };
     },
+    goToProduct() {
+      this.$router.push({ name: 'Product' })
+    }
   },
 };
 </script>

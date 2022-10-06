@@ -38,7 +38,7 @@
           <ChipsBlock />
           <!-- 自行判斷顯示 -->
           <template v-if="searchMode === 'List'">
-            <CantFindBlock />
+            <CantFindBlock v-if="searchMode != 'List'" />
             <ProductBlock />
           </template>
           <template v-else>

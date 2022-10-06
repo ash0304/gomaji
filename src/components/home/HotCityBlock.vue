@@ -12,6 +12,7 @@
             :style="styleObj(item)"
             class="hotcity__item d-lg-block"
             @mouseenter="activeItem = index"
+            @click="goToProduct()"
           >
             <div
               class="
@@ -112,6 +113,9 @@ export default {
         "background-position": "50%",
       };
     },
+    goToProduct() {
+      this.$router.push({ name: 'Product' })
+    }
   },
 };
 </script>

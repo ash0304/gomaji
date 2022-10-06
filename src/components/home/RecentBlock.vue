@@ -19,6 +19,7 @@
             v-for="item in recentBrowseList"
             :key="item.id"
             class="recent__item"
+            @click="goToProduct()"
           >
             <div class="recent__shadowbox d-flex justify-space-between">
               <!-- img -->
@@ -167,6 +168,9 @@ export default {
         "background-position": "center center",
       };
     },
+    goToProduct() {
+      this.$router.push({ name: 'Product' })
+    }
   },
 };
 </script>

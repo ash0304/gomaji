@@ -40,7 +40,7 @@
               </div>
             </div>
           </div>
-          <div class="cartfoot__checkout py-3 px-6 ml-3">前往結帳</div>
+          <div class="cartfoot__checkout py-3 px-6 ml-3" @click="goCheckOut()">前往結帳</div>
         </div>
       </v-col>
     </v-row>
@@ -54,6 +54,11 @@ export default {
       isAllSelect: false,
     };
   },
+  methods: {
+    goCheckOut() {
+      this.$router.push({name: 'CheckOut'});
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

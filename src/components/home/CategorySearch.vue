@@ -16,6 +16,7 @@
             v-for="item in categoryList"
             :key="item.id"
             class="carousel__item"
+            @click="goToProduct()"
           >
             <div class="carousel__shadowbox">
               <img class="carousel__item__bg" :src="item.url" />
@@ -92,6 +93,11 @@ export default {
       ],
     };
   },
+  methods: {
+    goToProduct() {
+      this.$router.push({ name: 'Product' })
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

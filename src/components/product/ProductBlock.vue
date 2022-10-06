@@ -6,6 +6,7 @@
       :key="index"
       cols="12"
       class="product__item pa-0 d-flex flex-column flex-lg-row my-4"
+      @click="goToProductDetail()"
     >
       <!-- left-->
       <v-col cols="12" lg="5" class="product__left pa-0">
@@ -168,6 +169,7 @@
       :key="index + 3"
       cols="12"
       class="product__item pa-0 d-flex flex-column flex-lg-row my-4"
+      @click="goToProductDetail()"
     >
       <!-- left-->
       <v-col cols="12" lg="5" class="product__left pa-0">
@@ -428,6 +430,9 @@ export default {
         "background-position": "center center",
       };
     },
+    goToProductDetail() {
+      this.$router.push({ name: 'ProductDetail' })
+    }
   },
   computed: {
     screenView() {

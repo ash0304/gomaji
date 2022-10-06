@@ -146,6 +146,7 @@
                         justify-center
                         align-center
                       "
+                      @click="goCart()"
                     >
                       <svg-icon iconClass="cart" className="icon" />
                       <div>購物車</div>
@@ -163,7 +164,7 @@
                 <div
                   class="header__box d-flex justify-space-between align-center"
                 >
-                  <div class="header__left">
+                  <div class="header__left" @click="goHome()">
                     <div class="logo__box d-lg-block">
                       <svg-icon iconClass="Logo" className="Logo" />
                     </div>
@@ -335,6 +336,12 @@ export default {
     searchHandler() {
       this.$emit("showModal", true);
     },
+    goHome() {
+      this.$router.push({name: 'Home'});
+    },
+    goCart() {
+      this.$router.push({name: 'Cart'});
+    }
   },
   beforeDestroy() {
     document.removeEventListener("scroll", this.scrollHandler);
